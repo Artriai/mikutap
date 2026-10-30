@@ -1,0 +1,27 @@
+Mikutap 完整网站包（含 GitHub Pages 配置）
+
+包含：完整源码、初音和洛天依音源、千本樱与雨爱完整曲谱及各自伴奏、测试和来源说明。
+
+本地运行：
+1. 解压到任意文件夹。
+2. 在该文件夹打开终端，运行：
+   python -m http.server 8000 --directory dist
+3. 浏览器打开 http://localhost:8000
+需要 Python 3。不要直接双击 index.html，浏览器会限制音源和曲谱加载。
+
+GitHub Pages：
+1. 新建仓库，默认分支 main。
+2. 把解压后的全部内容上传到仓库根目录，保留 .github/workflows/pages.yml。
+   注意上传解压后的文件，不是 ZIP 本身；音源和子文件夹必须保留完整。
+3. Settings → Pages → Build and deployment → Source 选择 GitHub Actions。
+4. 在 Actions 运行 Deploy GitHub Pages，或再向 main 推送一次修改。
+5. 成功后在 Settings → Pages 查看网址。
+仓库分支使用其他名称时，请同步修改工作流 branches: [main]。
+GitHub Free 的 Pages 需要公开仓库；私有仓库 Pages 需要支持该功能的付费方案。Pages 网站默认公开访问。
+
+其他静态托管：
+直接把 dist 文件夹内的全部内容部署为网站根目录即可，无需构建和后端。
+
+此包未更改当前主站。原站 START、播放列表、两位歌手音源和伴奏按当前已发布版本保留。
+许可证及音源、歌曲、角色权利说明见 LICENSE、README.md 和 docs/。
+源码版本：ec5e1a6bd7d63cc1eb1dbf040d479545e8d329d9

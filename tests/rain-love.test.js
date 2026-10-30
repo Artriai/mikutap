@@ -1,0 +1,20 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {compileScore} from '../dist/score.js';
+import {convertScore} from '../dist/voice-conversion.js';
+const root=new URL('../dist/',import.meta.url),read=p=>JSON.parse(fs.readFileSync(new URL(p,root)));
+const catalog=read('catalog.json'),playlist=read('songs/playlist.json');
+test('Rain Love covers every aligned lyric sentence and keeps the full instrumental timeline',()=>{
+ const track=playlist.tracks.find(t=>t.id==='rain-love');assert.ok(track);assert.equal(track.voice,'tianyi');
+ const score=read(track.score.split('?')[0]),compiled=compileScore(score,catalog);
+ assert.equal(score.notes.length,371);assert.equal(compiled.groups.length,371);assert.equal(new Set(score.notes.map(n=>n.phrase)).size,43);
+ assert.equal(new Set(score.notes.map(n=>n.syllable)).size,80);assert.equal(score.duration,track.duration);assert.ok(score.duration>258&&score.duration<260);
+ assert.ok(score.notes[0].time>15&&score.notes[0].time<17);assert.ok(score.notes.at(-1).time+score.notes.at(-1).duration>235);
+ assert.ok(score.notes.some((note,i)=>i&&note.time-score.notes[i-1].time-score.notes[i-1].duration>20),'instrumental interlude stays a real rest');
+ assert.ok(fs.statSync(new URL(score.accompaniment.path,root)).size>5000000);assert.equal(track.audio,undefined);
+ assert.ok(compiled.groups.every(g=>catalog.tianyi.phonemes[g.syllable]));assert.ok(compiled.groups.some(g=>g.pitches.length>10),'sustained words preserve their pitch contours');
+ const variant=read(track.variants.miku.split('?')[0]);assert.deepEqual(variant,convertScore(score,'miku',catalog));
+ assert.deepEqual(compileScore(variant,catalog).groups.map(g=>[g.time,g.duration,g.pitches]),compiled.groups.map(g=>[g.time,g.duration,g.pitches]));
+ assert.ok(!fs.existsSync(new URL('assets/songs/rain-love-vocals.mp3',root)));
+});

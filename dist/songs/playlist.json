@@ -1,0 +1,34 @@
+{
+  "tracks": [
+    {
+      "id": "senbonzakura",
+      "title": "千本樱",
+      "artist": "初音未来 · 完整歌词实时演唱",
+      "voice": "miku",
+      "engine": "sampler",
+      "articulation": "legato",
+      "duration": 182.48748,
+      "score": "songs/senbonzakura.json?v=6",
+      "variants": {
+        "tianyi": "songs/senbonzakura-tianyi.json?v=1"
+      }
+    },
+    {
+      "id": "rain-love",
+      "title": "雨爱",
+      "artist": "洛天依 · 杨丞琳原曲",
+      "voice": "tianyi",
+      "engine": "sampler",
+      "articulation": "legato",
+      "duration": 258.84737,
+      "score": "songs/rain-love.json?v=1",
+      "variants": {
+        "miku": "songs/rain-love-miku.json?v=1"
+      },
+      "descriptions": {
+        "tianyi": "洛天依 · 杨丞琳原曲",
+        "miku": "初音未来 · 中文近似发音"
+      }
+    }
+  ]
+}

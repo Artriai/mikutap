@@ -1,0 +1,22 @@
+{
+  "miku": {
+    "count": 150,
+    "distinctWaveforms": 146,
+    "durationRange": [
+      0.29,
+      0.5450113378684808
+    ],
+    "medianF0": 261.31794737641695,
+    "noDetectedF0": []
+  },
+  "tianyi": {
+    "count": 409,
+    "distinctWaveforms": 409,
+    "durationRange": [
+      0.31,
+      0.475
+    ],
+    "medianF0": 261.5425233386257,
+    "noDetectedF0": []
+  }
+}

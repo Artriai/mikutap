@@ -1,0 +1,10 @@
+{
+  "name": "mikutap",
+  "version": "1.11.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check": "node --check dist/mikutap.js && node --check dist/voice.js && node --check dist/sample-cache.js && node --check dist/voice-conversion.js && node --check dist/playlist.js && node --check dist/accompaniment.js && node --check dist/articulation.js && node --check dist/sampler.js && node --check dist/prepared-cache.js && node --check dist/performance.js && node --check dist/synthesis.js && node --check dist/score.js && node --check dist/midi.js && node --test tests/*.test.js"
+  }
+}

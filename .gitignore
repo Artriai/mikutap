@@ -1,0 +1,7 @@
+node_modules/
+.openai/preview.json
+.openai/hosting.local.json
+renders/
+*.tar.gz
+*.zip
+__pycache__/
