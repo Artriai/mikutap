@@ -14,6 +14,6 @@ test('main playlist sings every lyric event live without a song recording',()=>{
  assert.equal(score.notes[0].time,0);assert.equal(score.duration,track.duration);assert.ok(score.duration>180);
  let last=-1;for(const note of score.notes){assert.ok(note.time>=last);last=note.time;assert.ok(note.duration>0);assert.ok(note.time+note.duration<track.duration);assert.ok(catalog[track.voice].phonemes[note.syllable]);assert.ok(note.midi>=24&&note.midi<=96)}
  assert.ok(last>180,'the final verse must exist');assert.ok(!fs.existsSync(new URL('assets/songs/senbonzakura-miku.mp3',root)));
- const script=fs.readFileSync(new URL('playlist.js',root),'utf8');assert.doesNotMatch(script,/new Audio\(|createMediaElementSource|track\.audio/);assert.match(script,/engine:'sampler',muteBacktrack:true/);
+ const script=fs.readFileSync(new URL('playlist.js',root),'utf8');assert.doesNotMatch(script,/new Audio\(|createMediaElementSource|track\.audio/);assert.match(script,/engine:score\.engine\|\|'sampler',muteBacktrack:true/);
  const html=fs.readFileSync(new URL('index.html',root),'utf8');assert.match(html,/id="bt_start"/);assert.match(html,/id="playlist_tracks"/);assert.match(html,/src="playlist.js/);assert.doesNotMatch(html,/src="song.js/);assert.doesNotMatch(html,/playlist_dock/);assert.doesNotMatch(script,/relocate|append\(panel\)|MutationObserver/);
 });

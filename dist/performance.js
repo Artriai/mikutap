@@ -1,11 +1,12 @@
 import {synthesize} from './synthesis.js';
-import {compileScore} from './score.js?v=2';
+import {naturalSyllable} from './natural.js?v=1';
+import {compileScore} from './score.js?v=3';
 import {PreparedCache} from './prepared-cache.js';
 const preparedCache=new PreparedCache();
 import {readMidi} from './midi.js';
 import {playSample} from './sampler.js?v=2';
-import {shapePhrases} from './articulation.js';
-import {AccompanimentCache,playAccompaniment} from './accompaniment.js';
+import {shapePhrases} from './articulation.js?v=2';
+import {AccompanimentCache,playAccompaniment} from './accompaniment.js?v=2';
 const accompaniments=new AccompanimentCache();
 const audio=window.MikutapVoice;
 const rendered=new Map();let renderBytes=0;
@@ -16,14 +17,14 @@ function getPosition(){return state==='playing'?Math.min(current.duration,Math.m
 function restoreBacktrack(release=false){if(keepSilent){if(release){window.MikutapVisual?.lockBacktrack(false);keepSilent=false;priorBacktrack=null}return}if(priorBacktrack!==null){window.MikutapVisual?.backtrack(priorBacktrack);priorBacktrack=null;}}
 function cancel(){clearInterval(timer);cancelAnimationFrame(raf);timer=null;raf=null;for(const handle of handles)handle.stop();handles.clear();}
 function stop(){version++;cancel();position=0;state='stopped';owner=null;flashed.clear();restoreBacktrack(true);window.MikutapVisual?.performance?.(false);notify();}
-async function prepare(group){
+async function prepare(group,natural=false){
  const source=await audio.getBuffer(group.voice,group.syllable,group.midi);
  const meta=(await audio.getCatalog())[group.voice].phonemes[group.syllable];
- const key=JSON.stringify([group.voice,group.syllable,group.duration,group.pitches]);
+ const key=JSON.stringify([natural,group.voice,group.syllable,group.baseMidi,group.playDuration??group.duration,group.playPitches??group.pitches]);
  if(rendered.has(key))return rendered.get(key);
  // Yield between notes so a long score does not freeze pointer interaction.
  await new Promise(resolve=>setTimeout(resolve,0));
- const samples=synthesize(source.getChannelData(0),source.sampleRate,{baseMidi:audio.getSampleMeta?.(source)?.midi??meta.midi,duration:group.duration,pitches:group.pitches});
+ const samples=natural?naturalSyllable(source,{baseMidi:group.baseMidi,duration:group.playDuration??group.duration,pitches:group.playPitches??group.pitches,profile:group.profile}):synthesize(source.getChannelData(0),source.sampleRate,{baseMidi:audio.getSampleMeta?.(source)?.midi??meta.midi,duration:group.duration,pitches:group.pitches});
  const buffer=audio.getContext().createBuffer(1,samples.length,source.sampleRate);buffer.copyToChannel(samples,0);
  if(renderBytes+samples.byteLength>32*1024*1024){rendered.clear();renderBytes=0;}
  rendered.set(key,buffer);renderBytes+=samples.byteLength;return buffer;
@@ -63,12 +64,14 @@ async function buildPrepared(score,selectedEngine,onProgress,defaultVoice){
  const catalog=await audio.getCatalog(),prepared=compileScore(score,catalog,defaultVoice);
  prepared.accompaniment=await accompaniments.load(audio.getContext(),score.accompaniment);
  const unique=[...new Map(prepared.groups.map(group=>[group.voice+':'+group.syllable,group])).values()];let nextLoad=0,done=0;
- await Promise.all(Array.from({length:8},async()=>{while(nextLoad<unique.length){const group=unique[nextLoad++];await audio.getBuffer(group.voice,group.syllable,group.midi);done++;onProgress?.({loaded:done,total:unique.length})}}));
+ const total=unique.length+(selectedEngine==='natural'?prepared.groups.length:0);
+ await Promise.all(Array.from({length:8},async()=>{while(nextLoad<unique.length){const group=unique[nextLoad++];await audio.getBuffer(group.voice,group.syllable,group.midi);done++;onProgress?.({loaded:done,total})}}));
  for(const group of prepared.groups){
-  if(selectedEngine==='sampler'){group.buffer=await audio.getBuffer(group.voice,group.syllable,group.midi);group.baseMidi=audio.getSampleMeta?.(group.buffer)?.midi??catalog[group.voice].phonemes[group.syllable].midi;group.profile=audio.getProfile?.(group.buffer)}
+  if(['sampler','natural'].includes(selectedEngine)){group.buffer=await audio.getBuffer(group.voice,group.syllable,group.midi);group.baseMidi=audio.getSampleMeta?.(group.buffer)?.midi??catalog[group.voice].phonemes[group.syllable].midi;group.profile=audio.getProfile?.(group.buffer)}
   else group.buffer=await prepare(group);
  }
- if(selectedEngine==='sampler'&&score.articulation==='legato')shapePhrases(prepared.groups);
+ if(['sampler','natural'].includes(selectedEngine)&&score.articulation==='legato')shapePhrases(prepared.groups,{natural:selectedEngine==='natural'});
+ if(selectedEngine==='natural')for(const group of prepared.groups){group.buffer=await prepare(group,true);onProgress?.({loaded:++done,total})}
  if(score.visuals)prepared.events.push(...score.visuals.map((event,i)=>({...event,index:prepared.events.length+i,kind:'beat'})));
  prepared.events.sort((a,b)=>a.time-b.time||a.index-b.index);return prepared;
 }
@@ -79,12 +82,12 @@ function getPrepared(score,selectedEngine,options={}){
 }
 function isPrepared(score,options={}){return !!preparedCache.peek(score,preparationKey(score,options.engine||score.engine||'psola'))}
 async function preload(score,options={}){
- const selectedEngine=options.engine||score.engine||'psola';if(!['sampler','psola'].includes(selectedEngine))throw Error('未知演奏方式');
+ const selectedEngine=options.engine||score.engine||'psola';if(!['sampler','psola','natural'].includes(selectedEngine))throw Error('未知演奏方式');
  await audio.ensureReady();const data=await getPrepared(score,selectedEngine,{...options,cache:true});return {duration:data.duration,notes:data.groups.length,engine:selectedEngine};
 }
 async function play(score,options={}){
  stop();audio.stopAll?.();const token=version;owner=options.owner??null;engine=options.engine||score.engine||'psola';keepSilent=options.muteBacktrack===true;
- if(!['sampler','psola'].includes(engine))throw Error('未知演奏方式');
+ if(!['sampler','psola','natural'].includes(engine))throw Error('未知演奏方式');
  const selectedEngine=engine,preparedAlready=options.cache&&preparedCache.peek(score,preparationKey(score,selectedEngine));
  if(keepSilent)window.MikutapVisual?.lockBacktrack(true);
  window.MikutapVisual?.performance?.(true);

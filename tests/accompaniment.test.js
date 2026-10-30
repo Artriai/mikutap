@@ -31,6 +31,15 @@ test('instrumental follows the same anchor, offset and cancellation as live voic
 test('a seek at the end never starts an empty instrumental',()=>{
  const ctx=context();assert.equal(playAccompaniment(ctx,{}, {buffer:{duration:2},gain:.42},10,2,2),null);assert.equal(ctx.sources.length,0);
 });
+test('trimmed intro uses the original instrumental offset during play and seek',async()=>{
+ const ctx=context(),buffer={duration:258.84737},cache=new AccompanimentCache(async()=>({ok:true,arrayBuffer:async()=>new ArrayBuffer(0)}));
+ ctx.decodeAudioData=async()=>buffer;
+ const track=await cache.load(ctx,{path:'rain.mp3',offset:12.835});
+ playAccompaniment(ctx,{},track,10,0,246.01237);assert.deepEqual(ctx.sources[0].started,[10,12.835]);
+ playAccompaniment(ctx,{},track,20,30,246.01237);assert.deepEqual(ctx.sources[1].started,[20,42.835]);
+ assert.equal(playAccompaniment(ctx,{},track,30,246.01237,246.01237),null);
+ await assert.rejects(cache.load(ctx,{path:'rain.mp3',offset:-1}));
+});
 test('initializing song audio never clicks START or enters the manual scene',async()=>{
  const code=fs.readFileSync(new URL('../dist/voice.js',import.meta.url),'utf8'),catalog=JSON.parse(fs.readFileSync(new URL('../dist/catalog.json',import.meta.url)));
  let entries=0,constructs=0;const ctx={state:'running',destination:{},createGain:()=>({gain:{},connect(){}}),createDynamicsCompressor:()=>({threshold:{},ratio:{},connect(){}})};

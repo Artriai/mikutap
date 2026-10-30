@@ -181,7 +181,12 @@ def export():
   note={'time':round(start,5),'duration':round(end-start,5),'syllable':r['syllable'],'midi':midi,'velocity':.88,'visual':i%32,'phrase':r['line'],'pitches':points}
   if note['duration']<=.04:raise ValueError(('short note',i))
   notes.append(note)
- score={'title':'雨爱','voice':'tianyi','engine':'sampler','articulation':'legato','duration':round(duration,5),'accompaniment':{'path':'assets/songs/rain-love-instrumental.mp3','gain':.48},'notes':notes,'source':{'song':'杨丞琳 / 雨爱','composer':'金大洲','lyricist':'Wonderful','audioUrl':'https://2110-rainie-yang.mp3.pm/song/128260436-yu-ai/','method':'Complete MP3; local Demucs separation, Whisper recognition, constrained Mandarin CTC alignment and pYIN pitch extraction; live Tianyi syllable sampler. No original recorded vocals shipped.'}}
+ score={'title':'雨爱','voice':'tianyi','engine':'natural','articulation':'legato','duration':round(duration,5),'accompaniment':{'path':'assets/songs/rain-love-instrumental.mp3','gain':.48},'notes':notes,'source':{'song':'杨丞琳 / 雨爱','composer':'金大洲','lyricist':'Wonderful','audioUrl':'https://2110-rainie-yang.mp3.pm/song/128260436-yu-ai/','method':'Complete MP3; local Demucs separation, Whisper recognition, constrained Mandarin CTC alignment and pYIN pitch extraction; live Tianyi syllable sampler. No original recorded vocals shipped.'}}
+ # Keep three seconds of lead-in; accompaniment stays at its original offset.
+ cut=round(notes[0]['time']-3,5)
+ score['introTrim']=cut;score['originalDuration']=score['duration']
+ score['duration']=round(score['duration']-cut,5);score['accompaniment']['offset']=cut
+ for note in notes:note['time']=round(note['time']-cut,5)
  (ROOT/'dist/songs/rain-love.json').write_text(json.dumps(score,ensure_ascii=False,separators=(',',':')))
  subprocess.run(['ffmpeg','-v','error','-y','-i',str(BASE/'separated/htdemucs/source/no_vocals.wav'),'-codec:a','libmp3lame','-b:a','160k','-map_metadata','-1',str(ROOT/'dist/assets/songs/rain-love-instrumental.mp3')],check=True)
  print(json.dumps({'syllables':len(notes),'phonemes':len(set(n['syllable'] for n in notes)),'duration':score['duration'],'first':notes[0]['time'],'last':notes[-1]['time']+notes[-1]['duration'],'noVoicing':failures,'pitchPoints':sum(len(n['pitches']) for n in notes)}),flush=True)

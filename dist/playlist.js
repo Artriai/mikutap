@@ -1,5 +1,5 @@
 /* Homepage playlist owns its transport; manual START stays separate. */
-import './performance.js?v=13';
+import './performance.js?v=14';
 import {convertScore} from './voice-conversion.js?v=2';
 const panel=document.getElementById('playlist'),rows=document.getElementById('playlist_tracks');
 const toggle=document.getElementById('player_toggle'),stopButton=document.getElementById('player_stop');
@@ -30,7 +30,7 @@ async function loadScore(track,voice){
 function warmOtherVoice(track,voice){
  const other=voice==='miku'?'tianyi':'miku',key=track.id+':'+other;
  if(warmJobs.has(key))return;
- const job=Promise.all([loadScore(track,other),window.MikutapVoice.getCatalog()]).then(([source,catalog])=>window.Mikutap.prepare(convertScore(source,other,catalog),{engine:'sampler'})).catch(error=>{warmJobs.delete(key);console.debug('Background voice preparation deferred',error)});
+ const job=Promise.all([loadScore(track,other),window.MikutapVoice.getCatalog()]).then(([source,catalog])=>window.Mikutap.prepare(convertScore(source,other,catalog),{engine:source.engine||'sampler'})).catch(error=>{warmJobs.delete(key);console.debug('Background voice preparation deferred',error)});
  warmJobs.set(key,job);
 }
 async function playTrack(track,{position=0,paused=false,switching=false}={}){
@@ -39,11 +39,11 @@ async function playTrack(track,{position=0,paused=false,switching=false}={}){
   try{await window.MikutapVoice.choose(track.voice)}finally{selectingVoice--}
   if(request!==generation)return;
  }
- const voice=selectedVoice(),known=resolvedScores.get(track.variants?.[voice]??track.score),ready=known?.voice===voice&&window.Mikutap.isPrepared(known,{engine:'sampler'});stop();current=track;loading=true;showPreparation=!ready;pendingPosition=position;pendingPaused=paused;status(ready?'':switching?'正在切换演唱音源':'正在准备歌曲');render();const token=generation;
+ const voice=selectedVoice(),known=resolvedScores.get(track.variants?.[voice]??track.score),ready=known?.voice===voice&&window.Mikutap.isPrepared(known,{engine:known.engine||'sampler'});stop();current=track;loading=true;showPreparation=!ready;pendingPosition=position;pendingPaused=paused;status(ready?'':switching?'正在切换演唱音源':'正在准备歌曲');render();const token=generation;
  try{
   const [source,catalog]=await Promise.all([loadScore(track,voice),window.MikutapVoice.getCatalog()]);if(token!==generation)return;
   const score=convertScore(source,voice,catalog);
-  await window.Mikutap.play(score,{engine:'sampler',muteBacktrack:true,owner:'playlist',cache:true,startAt:position,paused,onProgress:({loaded,total})=>{if(token===generation)status((switching?'切换音源 ':'准备歌曲 ')+loaded+' / '+total)}});
+  await window.Mikutap.play(score,{engine:score.engine||'sampler',muteBacktrack:true,owner:'playlist',cache:true,startAt:position,paused,onProgress:({loaded,total})=>{if(token===generation)status((switching?'切换音源 ':'准备歌曲 ')+loaded+' / '+total)}});
   if(token!==generation)return;loading=false;status('');render();warmOtherVoice(track,voice);
  }catch(error){if(token!==generation)return;loading=false;status('加载失败，请点击歌曲重试');render();console.error(error)}
 }
@@ -68,7 +68,7 @@ document.addEventListener('mikutap:voicechange',()=>{
 });
 document.addEventListener('mikutap:transport',event=>{render();if(event.detail.state==='ended'&&event.detail.owner==='playlist')status('演唱结束')});
 document.addEventListener('mikutap:exit',stop);document.addEventListener('mikutap:manualstart',stop);
-fetch('songs/playlist.json?v=7').then(r=>{if(!r.ok)throw Error('播放列表加载失败');return r.json()}).then(data=>{
+fetch('songs/playlist.json?v=8').then(r=>{if(!r.ok)throw Error('播放列表加载失败');return r.json()}).then(data=>{
  tracks=data.tracks;for(const track of tracks){const row=document.createElement('button');row.type='button';row.className='playlist_track';row.dataset.track=track.id;row.innerHTML='<span class="track_number"></span><span class="track_info"><span class="track_title"></span><small></small></span><span class="track_action">播放</span>';row.querySelector('.track_number').textContent=String(rows.children.length+1).padStart(2,'0');row.querySelector('.track_title').textContent=track.title;rows.append(row)}render();
 }).catch(error=>{status('播放列表加载失败，请刷新重试');console.error(error)});
 setInterval(()=>{if(current)render()},100);render();

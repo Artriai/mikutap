@@ -37,7 +37,7 @@ export function compileScore(input,catalog,defaultVoice='miku'){
    });
    if(pitches[0].time!==0)throw Error('音高曲线必须从 0 开始');
   }
-  return {time,duration,voice,syllable,midi,velocity,visual:Math.abs(Math.floor(visual))%32,tie:!!note.tie,index,...(pitches?{pitches}:{})};
+  return {time,duration,voice,syllable,midi,velocity,phrase:note.phrase,visual:Math.abs(Math.floor(visual))%32,tie:!!note.tie,index,...(pitches?{pitches}:{})};
  }).sort((a,b)=>a.time-b.time||a.index-b.index);
  if(lyrics&&lyricIndex!==lyrics.length)throw Error('歌词音节数与非连音音符数不匹配');
  const groups=[];let previous;

@@ -18,12 +18,12 @@
       "title": "雨爱",
       "artist": "洛天依 · 杨丞琳原曲",
       "voice": "tianyi",
-      "engine": "sampler",
+      "engine": "natural",
       "articulation": "legato",
-      "duration": 258.84737,
-      "score": "songs/rain-love.json?v=1",
+      "duration": 246.01237,
+      "score": "songs/rain-love.json?v=2",
       "variants": {
-        "miku": "songs/rain-love-miku.json?v=1"
+        "miku": "songs/rain-love-miku.json?v=2"
       },
       "descriptions": {
         "tianyi": "洛天依 · 杨丞琳原曲",
