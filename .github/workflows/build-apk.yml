@@ -34,17 +34,10 @@ jobs:
         with:
           gradle-version: '8.7'
 
-      - name: Generate Release Keystore
+      - name: Verify Fixed Keystore
         run: |
-          keytool -genkeypair -v \
-            -keystore android/app/release.keystore \
-            -alias mikutap \
-            -keyalg RSA \
-            -keysize 2048 \
-            -validity 10000 \
-            -storepass mikutap123 \
-            -keypass mikutap123 \
-            -dname "CN=Mikutap, OU=Artriai, O=Artriai, L=Tokyo, C=JP"
+          test -f android/app/release.keystore
+          echo "Fixed release keystore verified."
 
       - name: Build Release APK
         run: |
