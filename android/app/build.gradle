@@ -25,8 +25,12 @@ android {
 
     signingConfigs {
         release {
-            // Uses debug signing by default so APK is immediately installable on any Android device
-            initWith(signingConfigs.debug)
+            if (file("release.keystore").exists()) {
+                storeFile file("release.keystore")
+                storePassword "mikutap123"
+                keyAlias "mikutap"
+                keyPassword "mikutap123"
+            }
         }
     }
 
