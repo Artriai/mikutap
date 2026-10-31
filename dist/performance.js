@@ -1,11 +1,12 @@
 import {synthesize} from './synthesis.js';
-import {naturalSyllable} from './natural.js?v=3';
+import {naturalSyllable} from './natural.js?v=4';
 import {compileScore} from './score.js?v=4';
 import {PreparedCache} from './prepared-cache.js';
 const preparedCache=new PreparedCache();
 import {readMidi} from './midi.js';
 import {playSample} from './sampler.js?v=2';
-import {shapePhrases} from './articulation.js?v=3';
+import {shapePhrases} from './articulation.js?v=4';
+import {loadTransitions} from './phonology.js';
 import {AccompanimentCache,playAccompaniment} from './accompaniment.js?v=2';
 const accompaniments=new AccompanimentCache();
 const audio=window.MikutapVoice;
@@ -21,11 +22,11 @@ function stop(){version++;cancel();position=0;state='stopped';owner=null;flashed
 async function prepare(group,natural=false){
  const source=natural&&group.buffer?group.buffer:await audio.getBuffer(group.voice,group.syllable,group.midi,natural?{fullBank:true}:undefined);
  const meta=(await audio.getCatalog())[group.voice].phonemes[group.syllable];
- const key=JSON.stringify([natural,group.voice,group.syllable,group.baseMidi,group.playDuration??group.duration,group.playPitches??group.pitches]);
+ const key=JSON.stringify([natural,group.voice,group.syllable,group.baseMidi,group.playDuration??group.duration,group.playPitches??group.pitches,!!group.trimCoda,!!group.skipAttack,group.transitionKind,group.transitionMeta,group.transitionOffset]);
  if(rendered.has(key))return rendered.get(key);
  // Yield periodically so a long score never blocks pointer interaction or wastes 4ms per note.
  if(nowMs()-lastYield>=14){await new Promise(resolve=>setTimeout(resolve,0));lastYield=nowMs();}
- const samples=natural?naturalSyllable(source,{baseMidi:group.baseMidi,duration:group.playDuration??group.duration,pitches:group.playPitches??group.pitches,profile:group.profile}):synthesize(source.getChannelData(0),source.sampleRate,{baseMidi:audio.getSampleMeta?.(source)?.midi??meta.midi,duration:group.duration,pitches:group.pitches});
+ const samples=natural?naturalSyllable(source,{baseMidi:group.baseMidi,duration:group.playDuration??group.duration,pitches:group.playPitches??group.pitches,profile:group.profile,trimCoda:group.trimCoda,skipAttack:group.skipAttack,transitionBuffer:group.transitionBuffer,transitionMeta:group.transitionMeta,transitionKind:group.transitionKind,transitionOffset:group.transitionOffset}):synthesize(source.getChannelData(0),source.sampleRate,{baseMidi:audio.getSampleMeta?.(source)?.midi??meta.midi,duration:group.duration,pitches:group.pitches});
  const buffer=audio.getContext().createBuffer(1,samples.length,source.sampleRate);buffer.copyToChannel(samples,0);
  if(renderBytes+samples.byteLength>64*1024*1024){rendered.clear();renderBytes=0;}
  rendered.set(key,buffer);renderBytes+=samples.byteLength;return buffer;
@@ -78,6 +79,17 @@ async function buildPrepared(score,selectedEngine,onProgress,defaultVoice){
   else group.buffer=await prepare(group);
  }
  if(['sampler','natural'].includes(selectedEngine)&&score.articulation==='legato')shapePhrases(prepared.groups,{natural:selectedEngine==='natural'});
+ if(selectedEngine==='natural'&&score.articulation==='legato'&&audio.getTransition){
+  const candidates=[...new Map(prepared.groups.filter(g=>g.vcvKey||g.vcKey).map(g=>[g.voice+':'+(g.vcvKey??g.vcKey),g])).entries()];
+  if(candidates.length){
+   const manifest=await loadTransitions(),transitions=new Map(),failedSprites=new Set();let nextTransition=0;
+   await Promise.all(Array.from({length:6},async()=>{while(nextTransition<candidates.length){
+    const [id,group]=candidates[nextTransition++],key=group.vcvKey??group.vcKey,meta=manifest[group.voice]?.[key];if(!meta||failedSprites.has(meta.sprite))continue;
+    try{const buffer=await audio.getTransition(group.voice,key,meta);transitions.set(id,{buffer,meta})}catch{failedSprites.add(meta.sprite);/* Optional audio retains legacy legato. */}
+   }}));
+   shapePhrases(prepared.groups,{natural:true,transitions});
+  }
+ }
  if(selectedEngine==='natural')for(const group of prepared.groups){group.buffer=await prepare(group,true);onProgress?.({loaded:++done,total})}
  if(score.visuals)prepared.events.push(...score.visuals.map((event,i)=>({...event,index:prepared.events.length+i,kind:'beat'})));
  prepared.events.sort((a,b)=>a.time-b.time||a.index-b.index);return prepared;

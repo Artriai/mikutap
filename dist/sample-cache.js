@@ -4,6 +4,28 @@
  window.MikutapBankCache=class {
   constructor(catalog,context,fetcher){this.catalog=catalog;this.context=context;this.fetch=(url,options)=>fetcher?fetcher(url,options):fetch(url,options);this.buffers=new Map();this.files=new Map();this.jobs=new Map();this.profiles=new WeakMap();this.metadata=new WeakMap();this.originals=new Map();this.originalFiles=new Map();this.originalJobs=new Map();}
   getMeta(buffer){return this.metadata.get(buffer)}
+  async getTransition(voice,key,meta){
+   if(!['miku','tianyi'].includes(voice)||!meta||typeof meta.sprite!=='string'||!/^assets\/(miku-vcv|tianyi-vc)\/[\w.-]+\.(mp3|wav)$/.test(meta.sprite))throw Error('无效过渡音源');
+   if(!Number.isFinite(meta.start)||meta.start<0||!Number.isFinite(meta.duration)||meta.duration<=0||meta.duration>3||!Number.isFinite(meta.midi)||meta.midi<24||meta.midi>96)throw Error('无效过渡片段');
+   for(const field of ['preutterance','overlap'])if(!Number.isFinite(meta[field])||meta[field]<0||meta[field]>=meta.duration)throw Error('无效过渡时间');
+   const id='transition:'+voice+':'+key+':'+JSON.stringify(meta),file='transition:'+meta.sprite;
+   if(!this.buffers.has(id)){
+    const job=(async()=>{
+     if(!this.files.has(file)){
+      const load=this.fetch(meta.sprite,{priority:'low'}).then(r=>{if(!r.ok)throw Error('过渡音源加载失败');return r.arrayBuffer()}).then(bytes=>this.context().decodeAudioData(bytes));
+      this.files.set(file,load);load.catch(()=>{if(this.files.get(file)===load)this.files.delete(file)});
+     }
+     const decoded=await this.files.get(file),start=Math.round(meta.start*decoded.sampleRate),length=Math.round(meta.duration*decoded.sampleRate);
+     if(length<1||start+length>decoded.length)throw Error('过渡音源片段不完整');
+     // AudioBuffer owns its storage: copy a view of the decoded sprite once per key.
+     const buffer=this.context().createBuffer(decoded.numberOfChannels,length,decoded.sampleRate);
+     for(let ch=0;ch<decoded.numberOfChannels;ch++)buffer.copyToChannel(decoded.getChannelData(ch).subarray(start,start+length),ch);
+     this.metadata.set(buffer,{...meta,transition:true});return buffer;
+    })();
+    this.buffers.set(id,job);job.catch(()=>{if(this.buffers.get(id)===job)this.buffers.delete(id)});
+   }
+   return this.buffers.get(id);
+  }
   primeOriginal(voice){
    const bank=this.catalog[voice]?.originalBank;if(!bank)return Promise.resolve(null);
    if(!this.originalFiles.has(voice)){

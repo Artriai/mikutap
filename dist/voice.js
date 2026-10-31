@@ -120,7 +120,7 @@
   },
   stop:function(slot){var handle=voices.get(slot);if(handle){handle.stop();voices.delete(slot)}},
   turn:function(){},stopAll:stopAll,choose:choose,getBuffer:bufferFor,loadBank:loadBank,playBuffer:playBuffer,flash:flash,
-  getSampleMeta:function(buffer){return cache.getMeta(buffer)},getProfile:function(buffer){return cache.profile(buffer)},getTapRate:tapRate,getDestination:function(){return master},getContext:function(){return ctx},getCatalog:function(){return catalogReady},getBank:function(){return bank},getBasic:function(){return basic},tap:tap
+  getTransition:function(voice,key,meta){return cache.getTransition(voice,key,meta)},getSampleMeta:function(buffer){return cache.getMeta(buffer)},getProfile:function(buffer){return cache.profile(buffer)},getTapRate:tapRate,getDestination:function(){return master},getContext:function(){return ctx},getCatalog:function(){return catalogReady},getBank:function(){return bank},getBasic:function(){return basic},tap:tap
  };
  $(function(){
   $('#bt_start a').on('click.voice',function(){starting=true});
