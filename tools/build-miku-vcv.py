@@ -3,6 +3,7 @@
 import argparse
 import json
 import re
+import warnings
 from pathlib import Path
 from cvvc_bank import ROOT, decode, fade, pack_sprites, merge_manifest
 
@@ -64,7 +65,8 @@ def build(source, dist, pitch='C4', encoding=None, bitrate='160k'):
         end = len(audio)/rate-cutoff if cutoff >= 0 else offset-cutoff
         end = min(end, offset+max(pre+.14, consonant+.035), offset+.55)
         if end-offset < pre+.04:
-            raise ValueError(f'OTO has no usable vowel on line {number}')
+            warnings.warn(f'Skipping OTO line {number}: no usable vowel after preutterance', stacklevel=1)
+            continue
         clip = fade(audio[round(offset*rate):round(end*rate)], rate)
         for syllable in ids:
             key = previous+'_'+syllable

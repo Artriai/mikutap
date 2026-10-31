@@ -22,6 +22,8 @@
 - 使用公开的 ContentVec／HuBERT 内容编码器。原型曾通过 John6666/mikuTTS 测试；批量离线推理借鉴其公开实现。
 - 每个成品的具体方法、生成用字、文件路径、基准音高写入 `dist/catalog.json`。发音的细节仍会受 TTS 前端和音色转换模型影响。
 
+2026-10-31 歌唱底模更新：全部 409 个程序单字改由 Qixuan v2.7.0 DiffSinger 声库（yqzhishen/qixuan-diffsinger）在 C4、无颤音的 OpenUTAU 工程中渲染，再经上述洛天依歌唱 RVC 模型转换；不再使用原先的 TTS 输入。保留原生音素标记里的拍前声母，另由 192 组双字连唱制得中文 VC 过渡。初音另由本地 HHS_kt C4 原始 OTO 生成 763 项 VCV 过渡；异常或缺失条目回退孤立音节。生成设置、输入 SHA-256 和数值检查见 [cvvc-validation.json](cvvc-validation.json)，复现步骤见 [cvvc-pipeline.md](cvvc-pipeline.md)。未将原始完整声库、编辑器或推理模型打包到站点。
+
 ## 区分不同类型
 
 `VCV sample` 是配布素材切片；`VCV homophone` 是日语同音拼写；`AI voice conversion` 是新增音色合成；`phoneme concatenation` 是同一音色的声母、韵母片段拼接。它们不会被标成同一来源。演奏时直接播放本站已保存的 WAV，不调用外部推理接口。

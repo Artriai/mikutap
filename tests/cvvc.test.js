@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
+import {createHash} from 'node:crypto';
 import {cnEnding,cnInitial,cnVcKey,jpVcvKey,cnEndings,cnInitials,loadTransitions} from '../dist/phonology.js';
 import {shapePhrases} from '../dist/articulation.js';
 import {naturalSyllable} from '../dist/natural.js';
@@ -19,6 +20,20 @@ test('all 409 Mandarin syllables resolve into the shared 8 x 24 grid',()=>{
  for(const {id} of catalog.tianyi.syllables){assert.ok(cnEndings.includes(cnEnding(id)),id);assert.ok(cnInitials.includes(cnInitial(id)),id)}
  for(const [id,wanted] of Object.entries({chuang:'ng',qing:'ng',tian:'n',yun:'n',zhi:'ir',shi:'ir',zi:'ir',yi:'i',ai:'i',hui:'i',ju:'v',qu:'v',xu:'v',yu:'v','nǚ':'v','lü':'v',yue:'e',jue:'e',er:'e',ao:'u',ou:'u',wo:'u',hua:'a'}))assert.equal(cnEnding(id),wanted,id);
  assert.equal(cnInitial('zhuang'),'zh');assert.equal(cnInitial('chi'),'ch');assert.equal(cnInitial('shi'),'sh');assert.equal(cnInitial('an'),'0');assert.equal(cnVcKey('chuang','wai'),'ng_w');assert.equal(jpVcvKey('ka','shi'),'a_shi');assert.equal(jpVcvKey('n','ba'),'n_ba');
+});
+
+test('shipped transition entries reference valid content-addressed sprites within the audio budget',()=>{
+ const manifest=JSON.parse(fs.readFileSync(new URL('../dist/transitions.json',import.meta.url))),files=new Set();
+ assert.equal(manifest.version,1);
+ for(const voice of ['miku','tianyi'])for(const [key,m] of Object.entries(manifest[voice])){
+  const [ending,initial]=key.split('_');
+  assert.ok((voice==='miku'?['a','i','u','e','o','n']:cnEndings).includes(ending));
+  assert.ok(voice==='miku'?catalog.miku.phonemes[initial]:cnInitials.includes(initial));
+  assert.ok(m.duration>m.preutterance&&m.start>=0&&m.overlap>=0&&m.overlap<m.duration);assert.equal(m.midi,60);
+  const bytes=fs.readFileSync(new URL('../dist/'+m.sprite,import.meta.url)),hash=createHash('sha256').update(bytes).digest('hex').slice(0,12);
+  assert.ok(m.sprite.endsWith('-'+hash+'.mp3'));files.add(m.sprite);
+ }
+ const total=[...files].reduce((sum,name)=>sum+fs.statSync(new URL('../dist/'+name,import.meta.url)).size,0);assert.ok(total<=8*1024*1024);
 });
 
 test('optional manifests share one lazy request and a failure can be retried',async()=>{
@@ -83,6 +98,12 @@ test('VCV uses the recorded attack and pitches the following vowel at exact outp
  assert.equal(out.length,sr*.7);assert.ok(out.every(Number.isFinite));
  let error=0;for(let i=sr*.04;i<sr*.06;i++)error+=Math.abs(out[i]-vcv[i]);assert.ok(error/(sr*.02)<.01);
  const body=out.slice(sr*.25,sr*.5),actual=sr/estimatePeriod(body,sr,67).period;assert.ok(Math.abs(actual-391.995)/391.995<.04);
+});
+
+test('a cropped long VCV prefix retains a click-free onset on a short note',()=>{
+ const out=naturalSyllable(buffer(tone()),{duration:.08,pitches:[{time:0,midi:67}],transitionBuffer:buffer(tone(.4)),transitionMeta:{...meta,duration:.4,preutterance:.25},transitionKind:'vcv',transitionOffset:.22});
+ assert.equal(out.length,sr*.08);assert.equal(out[0],0);assert.equal(out.at(-1),0);assert.ok(out.every(Number.isFinite));
+ assert.ok(Math.max(...out.slice(0,Math.round(sr*.001)).map(Math.abs))<.09,'cropping adds a fresh short fade');
 });
 
 test('natural transport warms only needed keys and seeks into the same fused note buffer',async()=>{

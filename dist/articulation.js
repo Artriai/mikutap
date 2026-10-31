@@ -1,6 +1,6 @@
 /* Align consonants before the beat and overlap adjacent vowels, while preserving
  * actual phrase rests. Multi-track lanes stay isolated; lyric/accompaniment timing stays intact. */
-import {jpVcvKey,cnVcKey} from './phonology.js';
+import {jpVcvKey,cnVcKey} from './phonology.js?v=2';
 export function shapePhrases(groups,{natural=false,transitions=new Map()}={}){
  const voices=new Map();
  for(const group of groups){

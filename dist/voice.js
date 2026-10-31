@@ -7,7 +7,7 @@
  var ready=new Promise(function(resolve,reject){readyResolve=resolve;readyReject=reject});
  ready.catch(function(){});
  var basic={};
- var catalogReady=fetch('catalog.json?v=8').then(function(r){if(!r.ok)throw Error('目录加载失败');return r.json()}).then(function(data){
+ var catalogReady=fetch('catalog.json?v=9').then(function(r){if(!r.ok)throw Error('目录加载失败');return r.json()}).then(function(data){
   catalog=data;basic={miku:data.miku.originalBank.samples.map(function(s){return s.syllable}),tianyi:data.tianyi.originalBank.samples.map(function(s){return s.syllable})};
   cache=new window.MikutapBankCache(data,function(){return ctx});
   cache.prime('miku').catch(function(){});cache.primeOriginal?.('miku').catch(function(){});cache.prime('tianyi').catch(function(){});cache.primeOriginal?.('tianyi').catch(function(){});

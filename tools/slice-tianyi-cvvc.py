@@ -28,7 +28,7 @@ def locate_boundary(audio, rate, expected):
     return (found if score > .22 else expected), score
 
 
-def slice_bank(plan_path, wav, dist, offset=0, refine=True, overrides=None, bitrate='160k'):
+def slice_bank(plan_path, wav, dist, offset=0, refine=True, overrides=None, bitrate='160k', alignment=None):
     plan = json.loads(Path(plan_path).read_text(encoding='utf-8'))
     if plan.get('version') != 1 or plan.get('bank') != 'tianyi' or plan.get('baseMidi') != 60:
         raise ValueError('Expected a C4 Tianyi plan from prepare-tianyi-cvvc.py')
@@ -44,12 +44,22 @@ def slice_bank(plan_path, wav, dist, offset=0, refine=True, overrides=None, bitr
     if plan['kind'] == 'base':
         directory = dist/'assets/tianyi-full'
         directory.mkdir(parents=True, exist_ok=True)
+        durations = {}
         # Validate every filename before replacing existing program-only audio.
         for row in rows:
             if Path(row['filename']).name != row['filename'] or not row['filename'].endswith('.wav'):
                 raise ValueError('Invalid syllable filename')
         for row in rows:
-            clip = fade(audio[round((row['start']+offset)*rate):round((row['start']+offset+row['duration'])*rate)], rate)
+            # Singing phonemizers anticipate consonants before the note's vowel beat.
+            # Include that native lead instead of slicing off the initial consonant.
+            timing = next((n for n in (alignment or []) if abs(n['start']-row['start']) < .001 and n['lyric'] == row['lyric']), None)
+            if timing and any(p.get('error') for p in timing['phones']):
+                raise ValueError('Native phonemizer error: '+row['syllable'])
+            start = max(0, min([row['start'], *[p['start']-.005 for p in timing['phones']]]) if timing else row['start'])
+            if row['start']-start > .22:
+                raise ValueError('Unexpected consonant lead: '+row['syllable'])
+            clip = fade(audio[round((start+offset)*rate):round((row['start']+offset+row['duration'])*rate)], rate)
+            durations[row['filename']] = len(clip)/rate
             with wave.open(str(directory/row['filename']), 'wb') as target:
                 target.setnchannels(1)
                 target.setsampwidth(2)
@@ -60,7 +70,7 @@ def slice_bank(plan_path, wav, dist, offset=0, refine=True, overrides=None, bitr
         catalog = json.loads(catalog_path.read_text(encoding='utf-8'))
         for row in rows:
             phoneme = catalog['tianyi']['phonemes'][row['syllable']]
-            phoneme.update({'expandedPath': 'assets/tianyi-full/'+row['filename'], 'method': 'DiffSinger singing + RVC (offline C4 export)', 'midi': 60})
+            phoneme.update({'expandedPath': 'assets/tianyi-full/'+row['filename'], 'method': 'AI voice conversion', 'renderMethod': 'DiffSinger singing + RVC (offline C4 export)', 'midi': 60, 'duration': durations[row['filename']], 'renderText': row.get('lyric', row['syllable']), 'revision': phoneme.get('revision', 0)+1})
         dump(catalog_path, catalog)
         return {'baseSyllables': len(rows)}
     overrides = overrides or {}
@@ -96,8 +106,10 @@ if __name__ == '__main__':
     p.add_argument('--boundaries', type=Path, help='JSON {key: absolute seconds in the original render grid}')
     p.add_argument('--report', type=Path, required=True)
     p.add_argument('--bitrate', default='160k')
+    p.add_argument('--alignment', type=Path, help='Native .alignment.json from render-openutau.py (retains pre-beat consonants)')
     a = p.parse_args()
     overrides = json.loads(a.boundaries.read_text(encoding='utf-8')) if a.boundaries else None
-    result = slice_bank(a.plan, a.wav, a.dist, a.offset, not a.grid_only, overrides, a.bitrate)
+    alignment = json.loads(a.alignment.read_text(encoding='utf-8')) if a.alignment else None
+    result = slice_bank(a.plan, a.wav, a.dist, a.offset, not a.grid_only, overrides, a.bitrate, alignment)
     dump(a.report, result)
     print({k: v for k, v in result.items() if k != 'alignment'})

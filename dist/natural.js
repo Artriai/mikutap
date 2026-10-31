@@ -81,7 +81,7 @@ function renderSyllable(buffer,{duration,baseMidi=60,pitches=[{time:0,midi:60}],
  const bodyStart=marks[nucStart]??Math.max(voiced,marks[0]??voiced);
  const rawBodyEnd=marks[nucEnd]??Math.max(bodyStart+1,end-.035*sr);
  const bodyEnd=Math.max(bodyStart+Math.min(period*4,Math.max(1,end-bodyStart-1)),rawBodyEnd);
- const head=skipAttack?0:attackSeconds!==null?Math.min(attackSeconds,duration*.8):Math.min(Math.max(0,bodyStart-onset)/sr,duration*.28,.105);
+ const head=skipAttack?0:attackSeconds!==null?Math.min(attackSeconds,Math.max(0,duration-1/sr)):Math.min(Math.max(0,bodyStart-onset)/sr,duration*.28,.105);
  const codaSec=Math.max(.032,(end-bodyEnd)/sr);
  const tail=trimCoda?0:Math.min(codaSec,duration*.22,.09);
  const middle=Math.max(1/sr,duration-head-tail);
@@ -168,7 +168,8 @@ export function naturalSyllable(buffer,options){
   const source=transitionBuffer,pre=meta.preutterance;
   const rendered=renderSyllable(source,{...options,duration:options.duration+offset,pitches:shiftPitches(options.pitches,-offset),baseMidi:meta.midi,profile:{onset:0,voicedAt:pre},attackSeconds:pre});
   // decodeAudioData normally shares a context rate; resample for offline callers too.
-  return Float32Array.from({length:Math.round(options.duration*sr)},(_,i)=>read(rendered,(i/sr+offset)*source.sampleRate));
+  const out=Float32Array.from({length:Math.round(options.duration*sr)},(_,i)=>read(rendered,(i/sr+offset)*source.sampleRate)*(offset>0?Math.min(1,i/sr/.004):1));
+  out[0]=0;out[out.length-1]=0;return out;
  }
  const cross=Math.min(.028,options.duration*.2),prefix=Math.min(meta.duration-offset,options.duration-cross);
  const prefixStart=Math.max(0,prefix-cross),bodyDuration=options.duration-prefixStart;

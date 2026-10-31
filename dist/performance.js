@@ -1,12 +1,12 @@
 import {synthesize} from './synthesis.js';
-import {naturalSyllable} from './natural.js?v=4';
+import {naturalSyllable} from './natural.js?v=5';
 import {compileScore} from './score.js?v=4';
 import {PreparedCache} from './prepared-cache.js';
 const preparedCache=new PreparedCache();
 import {readMidi} from './midi.js';
 import {playSample} from './sampler.js?v=2';
 import {shapePhrases} from './articulation.js?v=4';
-import {loadTransitions} from './phonology.js';
+import {loadTransitions} from './phonology.js?v=2';
 import {AccompanimentCache,playAccompaniment} from './accompaniment.js?v=2';
 const accompaniments=new AccompanimentCache();
 const audio=window.MikutapVoice;

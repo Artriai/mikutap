@@ -28,7 +28,7 @@ const manifests=new Map();
 export function loadTransitions(fetcher=globalThis.fetch){
  if(!manifests.has(fetcher)){
   const job=(async()=>{
-   const response=await fetcher('transitions.json?v=1');
+   const response=await fetcher('transitions.json?v=2');
    if(!response.ok)throw Error('过渡目录不可用');
    const data=await response.json();if(data?.version!==1)throw Error('未知过渡目录版本');return data;
   })();

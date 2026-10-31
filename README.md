@@ -77,10 +77,10 @@ await Mikutap.play(score);
 
 ## 声音处理与限制
 
-新增可选 VCV / CVVC 过渡管线和离线制库工具，具体下载、OpenUTAU 工程、切分命令和验证见 [docs/cvvc-pipeline.md](docs/cvvc-pipeline.md)。当前过渡目录初始为空；真实歌唱素材导入前继续使用现有单音节演唱。START 原始 32 音独立保留。
+已导入初音 763 项日语 VCV、洛天依 192 项中文 VC，过渡音频共约 6.9 MB；洛天依全部 409 个程序单字已用绮萱 DiffSinger C4 歌唱干声经洛天依歌唱 RVC 模型重制。歌单按需使用过渡，缺项沿用原有连音。具体下载、自动渲染、切分命令和验证见 [docs/cvvc-pipeline.md](docs/cvvc-pipeline.md) 与 [验证记录](docs/cvvc-validation.json)。START 原始 32 音独立保留。
 
 - 手动 START 模式初音直接使用 daniwell 的原始 32 个 Mikutap 片段；歌单 `natural` 演唱模式统一读取 HHS_kt 的 44.1 kHz C4 VCV 切片与社区 Miku RVC 补充音（`assets/miku-full/*.wav`），消除同一句中高低音原版短采样与扩展干声混用造成的音色跳变。
-- 洛天依主要由 kouylty 的社区歌声模型生成，6 个易误读音节使用同音色声韵片段拼接。
+- 洛天依全部 409 项程序音节由绮萱 DiffSinger C4 歌唱干声经 kouylty 的社区歌唱模型转换，统一保留原生拍前声母；中文 VC 库来自同一管线的双字连唱。
 - 歌单默认采用自适应基音周期追踪的 PSOLA（`engine: 'natural'`）重建有声部分，时长与音高独立，长音驻留开放元音核并稳定声压，连音与 VSQ `-` 延音不重复辅音；同时保留 `engine: 'sampler'` 原始采样实时变速路径供程序调用。高低音跨度过大、长延音和音节连接仍可能产生人工痕迹，不能等同于专业连续歌声引擎。
 - 默认采用单音节采样与短交叉淡化；导入可选过渡库后，同声部相邻音符可使用录制的 VCV / VC 过渡。扩展素材与原版的制作、调教不同，即使调整音高和高频也不能完全还原原版音色。中文歌曲优先使用洛天依；初音音节集主要覆盖日语，不会自动把中文强制近似为日语。
 - 来源、方法、基准音高见 `dist/catalog.json`，详情见 `docs/expanded-sources.md`。`docs/audio-validation.json` 保存原素材音频验证。

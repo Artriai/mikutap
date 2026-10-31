@@ -1,5 +1,5 @@
 /* Homepage playlist owns its transport; manual START stays separate. */
-import './performance.js?v=17';
+import './performance.js?v=18';
 import {convertScore} from './voice-conversion.js?v=2';
 const panel=document.getElementById('playlist'),rows=document.getElementById('playlist_tracks');
 const toggle=document.getElementById('player_toggle'),stopButton=document.getElementById('player_stop');

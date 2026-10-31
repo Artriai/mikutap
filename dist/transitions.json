@@ -1,5 +1,7647 @@
 {
   "version": 1,
-  "miku": {},
-  "tianyi": {}
+  "miku": {
+    "a_a": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 0.012,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_i": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 0.324,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_u": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 0.636,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_e": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 0.948,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ye": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 1.26,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_we": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 1.682,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_o": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 2.074,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_wo": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 2.386,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_n": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 2.698,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ka": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 3.01,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ki": {
+      "preutterance": 0.295,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 3.412,
+      "duration": 0.435,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ku": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 3.859,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ga": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 4.251,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_gi": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 4.623,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_gu": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 5.025,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ke": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 5.417,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_kya": {
+      "preutterance": 0.31,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 5.819,
+      "duration": 0.45,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_kyu": {
+      "preutterance": 0.33,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 6.281,
+      "duration": 0.47,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_kyo": {
+      "preutterance": 0.3,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 6.763,
+      "duration": 0.44,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ge": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 7.215,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_gya": {
+      "preutterance": 0.35,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 7.597,
+      "duration": 0.49,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_gyu": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 8.099,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_gyo": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 8.511,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ko": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 8.908,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_go": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 9.31,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_sa": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 9.687,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_shi": {
+      "preutterance": 0.315,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 10.099,
+      "duration": 0.455,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_su": {
+      "preutterance": 0.33,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 10.566,
+      "duration": 0.47,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_za": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 11.048,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ji": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 11.44,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_zu": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 11.812,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_se": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 12.224,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_sha": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 12.621,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_si": {
+      "preutterance": 0.33,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 13.048,
+      "duration": 0.47,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_shu": {
+      "preutterance": 0.295,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 13.53,
+      "duration": 0.435,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_sho": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 13.977,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ze": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 14.404,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ja": {
+      "preutterance": 0.285,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 14.826,
+      "duration": 0.425,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_dya": {
+      "preutterance": 0.285,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 15.263,
+      "duration": 0.425,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_zi": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 15.7,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ju": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 16.067,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_dyu": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 16.499,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_jo": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 16.931,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_dyo": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 17.358,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_she": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 17.785,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_so": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 18.187,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_je": {
+      "preutterance": 0.3,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 18.614,
+      "duration": 0.44,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_zo": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 19.066,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ta": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 19.463,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_chi": {
+      "preutterance": 0.3,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 19.855,
+      "duration": 0.44,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_tsu": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 20.307,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_da": {
+      "preutterance": 0.2,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 20.749,
+      "duration": 0.34,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_di": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 21.101,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_du": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 21.543,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_te": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 21.955,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_cha": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 22.337,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ti": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 22.769,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_chu": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 23.171,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_cho": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 23.603,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_de": {
+      "preutterance": 0.205,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 24.02,
+      "duration": 0.345,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_tsa": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 24.377,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_tsi": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 24.809,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_tu": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 25.231,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_tse": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 25.633,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_to": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 26.065,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_do": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 26.467,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_che": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 26.829,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_dhi": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 27.256,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_dho": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 27.618,
+      "duration": 0.31466666666666665,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_tso": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 27.944666666666667,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_na": {
+      "preutterance": 0.2,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 28.376666666666665,
+      "duration": 0.34,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ni": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 28.728666666666665,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_nu": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 29.125666666666667,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ne": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 29.557666666666666,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_nya": {
+      "preutterance": 0.34,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 29.934666666666665,
+      "duration": 0.48,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_nyu": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 30.426666666666666,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_nyo": {
+      "preutterance": 0.36,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 30.858666666666668,
+      "duration": 0.5,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_no": {
+      "preutterance": 0.2,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 31.370666666666665,
+      "duration": 0.34,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ha": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 31.722666666666665,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_hi": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 32.089666666666666,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_fu": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 32.49666666666667,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ba": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 32.86366666666667,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_bi": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 33.25566666666667,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_bu": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 33.647666666666666,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_pa": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 34.01466666666666,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_pi": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 34.42166666666667,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_pu": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 34.82366666666667,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_he": {
+      "preutterance": 0.2,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 35.23566666666667,
+      "duration": 0.34,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_hya": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 35.587666666666664,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_hyu": {
+      "preutterance": 0.285,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 36.029666666666664,
+      "duration": 0.425,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_hyo": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 36.46666666666667,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_be": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 36.87866666666667,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_bya": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 37.25566666666667,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_byu": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 37.66266666666667,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_byo": {
+      "preutterance": 0.36,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 38.10466666666667,
+      "duration": 0.5,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_pe": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 38.61666666666667,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_pya": {
+      "preutterance": 0.375,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 39.01866666666667,
+      "duration": 0.515,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_pyu": {
+      "preutterance": 0.305,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 39.54566666666667,
+      "duration": 0.445,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_pyo": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 40.00266666666667,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_fa": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 40.42466666666667,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_fi": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 40.79666666666667,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_fe": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 41.208666666666666,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ho": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 41.61566666666667,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_fo": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 41.98766666666667,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_bo": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 42.379666666666665,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_po": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 42.76166666666666,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ma": {
+      "preutterance": 0.2,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 43.153666666666666,
+      "duration": 0.34,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_mi": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 43.50566666666667,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_mu": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 43.867666666666665,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_me": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 44.26466666666666,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_mya": {
+      "preutterance": 0.37,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 44.63666666666666,
+      "duration": 0.51,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_myu": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 45.15866666666667,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_myo": {
+      "preutterance": 0.315,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 45.56066666666667,
+      "duration": 0.455,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_mo": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 46.02766666666667,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ya": {
+      "preutterance": 0.295,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 46.394666666666666,
+      "duration": 0.435,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_yu": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 46.84166666666667,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_yo": {
+      "preutterance": 0.285,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 47.263666666666666,
+      "duration": 0.425,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ra": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 47.70066666666666,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ri": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 48.12266666666667,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ru": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 48.489666666666665,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_rya": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 48.86666666666667,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ryu": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 49.26866666666667,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ryo": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 49.635666666666665,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_re": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 50.01266666666667,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_ro": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 50.41466666666667,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_wa": {
+      "preutterance": 0.345,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 50.81166666666667,
+      "duration": 0.485,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "a_wi": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 51.30866666666667,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-a-a4f03d71569e.mp3"
+    },
+    "i_a": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 0.012,
+      "duration": 0.312,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_i": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 0.336,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_u": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 0.648,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_e": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 0.96,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_yu": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 1.272,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ye": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 1.639,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_wi": {
+      "preutterance": 0.305,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 2.031,
+      "duration": 0.445,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_we": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 2.488,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_o": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 2.915,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_wo": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 3.227,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ka": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 3.539,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ga": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 3.906,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ki": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 4.298,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_kyu": {
+      "preutterance": 0.295,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 4.73,
+      "duration": 0.435,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ku": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 5.177,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ke": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 5.544,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_kya": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 5.916,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_kyo": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 6.358,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_gi": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 6.79,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_gyu": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 7.222,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_gu": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 7.664,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ge": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 8.076,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_gya": {
+      "preutterance": 0.37,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 8.483,
+      "duration": 0.51,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_gyo": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 9.005,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ko": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 9.422,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_go": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 9.794,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_sa": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 10.181,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_za": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 10.613,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_shi": {
+      "preutterance": 0.325,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 11.005,
+      "duration": 0.465,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_su": {
+      "preutterance": 0.35,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 11.482,
+      "duration": 0.49,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_se": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 11.984,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_sha": {
+      "preutterance": 0.285,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 12.401,
+      "duration": 0.425,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_sho": {
+      "preutterance": 0.285,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 12.838,
+      "duration": 0.425,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ji": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 13.275,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_zu": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 13.662,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ze": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 14.074,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ja": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 14.491,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_dya": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 14.918,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_jo": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 15.345,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_dyo": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 15.752,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_si": {
+      "preutterance": 0.345,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 16.159,
+      "duration": 0.485,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_shu": {
+      "preutterance": 0.295,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 16.656,
+      "duration": 0.435,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_she": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 17.103,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_so": {
+      "preutterance": 0.3,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 17.525,
+      "duration": 0.44,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_zi": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 17.977,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ju": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 18.364,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_dyu": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 18.786,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_je": {
+      "preutterance": 0.295,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 19.208,
+      "duration": 0.435,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_zo": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 19.655,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ta": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 20.062,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_da": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 20.454,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_chi": {
+      "preutterance": 0.295,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 20.826,
+      "duration": 0.435,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_tsu": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 21.273,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_te": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 21.715,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_cha": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 22.102,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_cho": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 22.529,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_di": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 22.951,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_du": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 23.373,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_de": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 23.785,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_tsa": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 24.157,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_tsi": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 24.589,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_tu": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 25.001,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_tse": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 25.393,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_to": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 25.82,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_do": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 26.217,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ti": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 26.589,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_chu": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 27.016,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_che": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 27.438,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_dhi": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 27.855,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_dho": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 28.232,
+      "duration": 0.31666666666666665,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_tso": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 28.560666666666666,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_na": {
+      "preutterance": 0.19,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 28.99266666666667,
+      "duration": 0.33,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ni": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 29.334666666666667,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_nyu": {
+      "preutterance": 0.33,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 29.711666666666666,
+      "duration": 0.47,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_nu": {
+      "preutterance": 0.195,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 30.193666666666665,
+      "duration": 0.335,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ne": {
+      "preutterance": 0.2,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 30.540666666666667,
+      "duration": 0.34,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_nya": {
+      "preutterance": 0.325,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 30.892666666666667,
+      "duration": 0.465,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_nyo": {
+      "preutterance": 0.355,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 31.369666666666667,
+      "duration": 0.495,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_no": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 31.876666666666665,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ha": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 32.263666666666666,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ba": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 32.62566666666667,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_pa": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 33.01766666666666,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_hi": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 33.42466666666667,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_hyu": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 33.81666666666667,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_fu": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 34.248666666666665,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_he": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 34.660666666666664,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_hya": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 35.03766666666667,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_hyo": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 35.47966666666667,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_bi": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 35.88166666666667,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_byu": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 36.263666666666666,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_bu": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 36.68066666666667,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_be": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 37.05266666666667,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_bya": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 37.434666666666665,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_byo": {
+      "preutterance": 0.34,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 37.821666666666665,
+      "duration": 0.48,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_pi": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 38.31366666666667,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_pyu": {
+      "preutterance": 0.285,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 38.705666666666666,
+      "duration": 0.425,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_pu": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 39.14266666666666,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_pe": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 39.54966666666667,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_pya": {
+      "preutterance": 0.36,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 39.95166666666667,
+      "duration": 0.49966666666666665,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_pyo": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 40.46333333333333,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_fa": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 40.870333333333335,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_fi": {
+      "preutterance": 0.33,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 41.27733333333333,
+      "duration": 0.47,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_fe": {
+      "preutterance": 0.305,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 41.75933333333333,
+      "duration": 0.445,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ho": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 42.21633333333333,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_fo": {
+      "preutterance": 0.295,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 42.583333333333336,
+      "duration": 0.435,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_bo": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 43.03033333333333,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_po": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 43.412333333333336,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ma": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 43.809333333333335,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_mi": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 44.17133333333334,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_myu": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 44.538333333333334,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_mu": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 44.970333333333336,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_me": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 45.37733333333333,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_mya": {
+      "preutterance": 0.37,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 45.75933333333333,
+      "duration": 0.51,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_myo": {
+      "preutterance": 0.36,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 46.281333333333336,
+      "duration": 0.5,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_mo": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 46.79333333333334,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ya": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 47.17033333333333,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_yo": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 47.577333333333335,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ra": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 47.95933333333333,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_rya": {
+      "preutterance": 0.35,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 48.336333333333336,
+      "duration": 0.49,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ryo": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 48.83833333333333,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ri": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 49.220333333333336,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ryu": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 49.602333333333334,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ru": {
+      "preutterance": 0.205,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 49.98433333333333,
+      "duration": 0.345,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_re": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 50.34133333333333,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_ro": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 50.708333333333336,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_wa": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 51.07033333333333,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "i_n": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 51.492333333333335,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-i-af144918fcd8.mp3"
+    },
+    "u_e": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 0.012,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_a": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 0.324,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ya": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 0.636,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_yo": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 1.048,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_wa": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 1.41,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_u": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 1.792,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_i": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 2.104,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_wi": {
+      "preutterance": 0.185,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 2.416,
+      "duration": 0.325,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_n": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 2.753,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_o": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 3.065,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_wo": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 3.377,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ke": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 3.689,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ge": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 4.051,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_kyo": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 4.428,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_kya": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 4.84,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ka": {
+      "preutterance": 0.195,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 5.252,
+      "duration": 0.335,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_kyu": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 5.599,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ki": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 6.031,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_gyo": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 6.443,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_gya": {
+      "preutterance": 0.36,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 6.845,
+      "duration": 0.5,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ga": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 7.357,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_gyu": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 7.729,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_gi": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 8.136,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ku": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 8.538,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_gu": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 8.905,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ko": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 9.297,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_go": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 9.664,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_se": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 10.036,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ze": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 10.433,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_sho": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 10.84,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_sa": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 11.237,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_she": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 11.659,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_shu": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 12.026,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_si": {
+      "preutterance": 0.32,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 12.433,
+      "duration": 0.46,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_jo": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 12.905,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_dyo": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 13.307,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_za": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 13.709,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_je": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 14.101,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ju": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 14.528,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_dyu": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 14.94,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_zi": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 15.352,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_sha": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 15.739,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_su": {
+      "preutterance": 0.32,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 16.126,
+      "duration": 0.46,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_shi": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 16.598,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ja": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 17.025,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_dya": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 17.447,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_zu": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 17.869,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ji": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 18.271,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_so": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 18.648,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_zo": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 19.075,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_te": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 19.472,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_de": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 19.849,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_cho": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 20.221,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ta": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 20.643,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_che": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 21.03,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_chu": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 21.457,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ti": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 21.889,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_da": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 22.296,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_tse": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 22.668,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_tsa": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 23.1,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_tso": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 23.532,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_tsu": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 23.964,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_chi": {
+      "preutterance": 0.295,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 24.406,
+      "duration": 0.435,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_du": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 24.853,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_di": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 25.245,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_cha": {
+      "preutterance": 0.285,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 25.652,
+      "duration": 0.425,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_tyo": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 26.089,
+      "duration": 0.3006666666666667,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_to": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 26.401666666666667,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_do": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 26.788666666666668,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_dhi": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 27.150666666666666,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_tu": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 27.542666666666666,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_tsi": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 27.984666666666666,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ne": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 28.391666666666666,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_nyo": {
+      "preutterance": 0.345,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 28.778666666666666,
+      "duration": 0.485,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_nya": {
+      "preutterance": 0.33,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 29.275666666666666,
+      "duration": 0.47,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_na": {
+      "preutterance": 0.205,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 29.757666666666665,
+      "duration": 0.345,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_nyu": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 30.11466666666667,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ni": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 30.531666666666666,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_nu": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 30.913666666666668,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_no": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 31.290666666666667,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_he": {
+      "preutterance": 0.205,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 31.657666666666668,
+      "duration": 0.345,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_be": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 32.01466666666666,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_pe": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 32.416666666666664,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_hyo": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 32.82366666666667,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_hya": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 33.230666666666664,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ha": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 33.647666666666666,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_hyu": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 34.019666666666666,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_hi": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 34.43666666666667,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_byo": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 34.818666666666665,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_bya": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 35.21066666666667,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ba": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 35.59766666666667,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_byu": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 36.00966666666667,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_bi": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 36.42666666666667,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_pyo": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 36.803666666666665,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_pya": {
+      "preutterance": 0.37,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 37.23566666666667,
+      "duration": 0.51,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_pa": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 37.757666666666665,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_pyu": {
+      "preutterance": 0.305,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 38.169666666666664,
+      "duration": 0.445,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_pi": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 38.626666666666665,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_fe": {
+      "preutterance": 0.305,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 39.028666666666666,
+      "duration": 0.445,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_fa": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 39.48566666666667,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_fo": {
+      "preutterance": 0.3,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 39.897666666666666,
+      "duration": 0.44,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_fu": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 40.349666666666664,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_fi": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 40.76166666666666,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_bu": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 41.193666666666665,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_pu": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 41.595666666666666,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ho": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 42.007666666666665,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_bo": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 42.36966666666667,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_po": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 42.77166666666667,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_me": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 43.16866666666667,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_myo": {
+      "preutterance": 0.325,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 43.54566666666667,
+      "duration": 0.465,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_mya": {
+      "preutterance": 0.365,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 44.022666666666666,
+      "duration": 0.505,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ma": {
+      "preutterance": 0.205,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 44.53966666666667,
+      "duration": 0.345,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_myu": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 44.89666666666667,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_mi": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 45.30866666666667,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_mu": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 45.67066666666667,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_mo": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 46.08266666666667,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ye": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 46.45466666666667,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_yu": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 46.86666666666667,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_re": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 47.273666666666664,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ryo": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 47.635666666666665,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ryu": {
+      "preutterance": 0.2,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 47.99766666666667,
+      "duration": 0.34,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ri": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 48.349666666666664,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_rya": {
+      "preutterance": 0.34,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 48.75666666666667,
+      "duration": 0.48,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ra": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 49.248666666666665,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ru": {
+      "preutterance": 0.2,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 49.63066666666667,
+      "duration": 0.34,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_ro": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 49.98266666666667,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "u_we": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 50.34466666666667,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-u-82b42545cd73.mp3"
+    },
+    "e_a": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 0.012,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_i": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 0.324,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ye": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 0.636,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_yu": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 1.018,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_yo": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 1.445,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_wi": {
+      "preutterance": 0.285,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 1.872,
+      "duration": 0.425,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_we": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 2.309,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_u": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 2.736,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_e": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 3.048,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_o": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 3.36,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_wo": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 3.672,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ka": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 3.984,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ga": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 4.386,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_kyu": {
+      "preutterance": 0.3,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 4.783,
+      "duration": 0.44,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_kyo": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 5.235,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ki": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 5.677,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_kya": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 6.109,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_gyu": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 6.551,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_gyo": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 6.968,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_gi": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 7.37,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_gya": {
+      "preutterance": 0.37,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 7.782,
+      "duration": 0.51,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ke": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 8.304,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ku": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 8.706,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ko": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 9.108,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ge": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 9.52,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_gu": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 9.922,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_go": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 10.339,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_sa": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 10.731,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_za": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 11.113,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_she": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 11.545,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_shu": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 11.922,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_sho": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 12.349,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_shi": {
+      "preutterance": 0.295,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 12.756,
+      "duration": 0.435,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_sha": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 13.203,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_je": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 13.605,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ju": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 14.037,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_dyu": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 14.459,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_jo": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 14.881,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_dyo": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 15.283,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ji": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 15.685,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ja": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 16.107,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_dya": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 16.534,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_si": {
+      "preutterance": 0.3,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 16.961,
+      "duration": 0.44,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_zi": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 17.413,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_se": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 17.835,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_su": {
+      "preutterance": 0.3,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 18.202,
+      "duration": 0.44,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_so": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 18.654,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ze": {
+      "preutterance": 0.295,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 19.051,
+      "duration": 0.435,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_zu": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 19.498,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_zo": {
+      "preutterance": 0.285,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 19.94,
+      "duration": 0.425,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ta": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 20.377,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_da": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 20.764,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_che": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 21.156,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_chu": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 21.533,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_cho": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 21.915,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_chi": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 22.287,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_cha": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 22.684,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_di": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 23.081,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_tsa": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 23.493,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_tsi": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 23.935,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_tse": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 24.362,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_tu": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 24.804,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_tso": {
+      "preutterance": 0.3,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 25.206,
+      "duration": 0.44,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ti": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 25.658,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_tyo": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 26.08,
+      "duration": 0.25066666666666665,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_te": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 26.342666666666666,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_tsu": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 26.714666666666666,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_to": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 27.156666666666666,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_dho": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 27.548666666666666,
+      "duration": 0.33366666666666667,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_dhi": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 27.894333333333332,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_de": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 28.301333333333332,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_du": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 28.69333333333333,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_do": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 29.13533333333333,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_na": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 29.517333333333333,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_nyu": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 29.924333333333333,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_nyo": {
+      "preutterance": 0.35,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 30.346333333333334,
+      "duration": 0.49,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ni": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 30.848333333333333,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_nya": {
+      "preutterance": 0.3,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 31.240333333333332,
+      "duration": 0.44,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ne": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 31.692333333333334,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_nu": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 32.10433333333334,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_no": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 32.51133333333333,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ha": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 32.903333333333336,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ba": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 33.27033333333333,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_pa": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 33.68233333333333,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_hyu": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 34.09433333333333,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_hyo": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 34.49133333333333,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_hi": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 34.87833333333333,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_hya": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 35.245333333333335,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_byu": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 35.65233333333333,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_byo": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 36.06933333333333,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_bi": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 36.461333333333336,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_bya": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 36.83833333333333,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_pyu": {
+      "preutterance": 0.3,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 37.23533333333334,
+      "duration": 0.44,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_pyo": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 37.687333333333335,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_pi": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 38.10933333333333,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_pya": {
+      "preutterance": 0.4,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 38.516333333333336,
+      "duration": 0.54,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_fa": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 39.068333333333335,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_fi": {
+      "preutterance": 0.325,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 39.480333333333334,
+      "duration": 0.465,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_fe": {
+      "preutterance": 0.305,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 39.95733333333333,
+      "duration": 0.445,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_fu": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 40.41433333333333,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_fo": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 40.83133333333333,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_he": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 41.27333333333333,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ho": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 41.635333333333335,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_be": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 41.99733333333333,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_bu": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 42.394333333333336,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_bo": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 42.78633333333333,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_pe": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 43.18833333333333,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_pu": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 43.595333333333336,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_po": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 44.007333333333335,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ma": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 44.41433333333333,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_myu": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 44.791333333333334,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_myo": {
+      "preutterance": 0.34,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 45.18333333333333,
+      "duration": 0.48,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_mi": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 45.675333333333334,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_mya": {
+      "preutterance": 0.4,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 46.062333333333335,
+      "duration": 0.54,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_me": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 46.614333333333335,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_mu": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 47.001333333333335,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_mo": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 47.428333333333335,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ya": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 47.82033333333333,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ra": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 48.25233333333333,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ryu": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 48.669333333333334,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ryo": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 49.03633333333333,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_rya": {
+      "preutterance": 0.36,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 49.40833333333333,
+      "duration": 0.5,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ri": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 49.92033333333333,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_re": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 50.297333333333334,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ru": {
+      "preutterance": 0.195,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 50.68933333333333,
+      "duration": 0.335,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_ro": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 51.03633333333333,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_wa": {
+      "preutterance": 0.3,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 51.428333333333335,
+      "duration": 0.44,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "e_n": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 51.88033333333333,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-e-c08630a44cd6.mp3"
+    },
+    "o_ye": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 0.012,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_yo": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 0.424,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_a": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 0.821,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_i": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 1.133,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_wa": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 1.445,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_wi": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 1.842,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_we": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 2.259,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_u": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 2.636,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_e": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 2.948,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_o": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 3.26,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_wo": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 3.572,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_kyo": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 3.884,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_kya": {
+      "preutterance": 0.285,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 4.316,
+      "duration": 0.425,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ki": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 4.753,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_kyu": {
+      "preutterance": 0.3,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 5.185,
+      "duration": 0.44,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_gyo": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 5.637,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_gya": {
+      "preutterance": 0.37,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 6.064,
+      "duration": 0.51,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_gi": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 6.586,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_gyu": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 7.018,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ka": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 7.445,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ga": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 7.827,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ke": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 8.229,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ko": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 8.621,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ge": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 9.008,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_go": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 9.43,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ku": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 9.832,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_gu": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 10.224,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_she": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 10.646,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_sho": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 11.043,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_sha": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 11.46,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_si": {
+      "preutterance": 0.295,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 11.872,
+      "duration": 0.435,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_shu": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 12.319,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_je": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 12.746,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_jo": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 13.173,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_dyo": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 13.575,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ja": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 13.977,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_dya": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 14.399,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_zi": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 14.821,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ju": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 15.243,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_dyu": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 15.655,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_sa": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 16.067,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_shi": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 16.449,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_za": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 16.891,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ji": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 17.308,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_se": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 17.72,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_so": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 18.087,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ze": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 18.484,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_zo": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 18.911,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_su": {
+      "preutterance": 0.31,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 19.338,
+      "duration": 0.45,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_zu": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 19.8,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_che": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 20.222,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_cho": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 20.649,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_cha": {
+      "preutterance": 0.285,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 21.071,
+      "duration": 0.425,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ti": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 21.508,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_chu": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 21.905,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_tse": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 22.337,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_tso": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 22.779,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_tu": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 23.221,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ta": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 23.623,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_chi": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 24.025,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_da": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 24.467,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_di": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 24.839,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_te": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 25.241,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_to": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 25.633,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_de": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 26.035,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_do": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 26.407,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_dhi": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 26.779,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_tsa": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 27.151,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_tsi": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 27.593,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_tsu": {
+      "preutterance": 0.3,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 27.995,
+      "duration": 0.44,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_du": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 28.447,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_nyo": {
+      "preutterance": 0.42,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 28.869,
+      "duration": 0.55,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_nya": {
+      "preutterance": 0.36,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 29.431,
+      "duration": 0.5,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ni": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 29.943,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_nyu": {
+      "preutterance": 0.31,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 30.37,
+      "duration": 0.45,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_na": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 30.832,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ne": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 31.224,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_no": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 31.636,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_nu": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 32.038,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_hyo": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 32.435,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_hya": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 32.817,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_hi": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 33.214,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_hyu": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 33.576,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_byo": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 33.958,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_bya": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 34.385,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_bi": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 34.782,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_byu": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 35.169,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_pyo": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 35.596,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_pya": {
+      "preutterance": 0.38,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 36.013,
+      "duration": 0.52,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_pi": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 36.545,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_pyu": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 36.947,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_fe": {
+      "preutterance": 0.295,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 37.389,
+      "duration": 0.435,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_fo": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 37.836,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_fu": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 38.278,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ha": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 38.68,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_fa": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 39.042,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_fi": {
+      "preutterance": 0.35,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 39.444,
+      "duration": 0.49,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ba": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 39.946,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_pa": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 40.328,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_he": {
+      "preutterance": 0.2,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 40.73,
+      "duration": 0.34,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ho": {
+      "preutterance": 0.205,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 41.082,
+      "duration": 0.345,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_be": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 41.439,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_bo": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 41.801,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_pe": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 42.183,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_po": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 42.575,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_bu": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 42.962,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_pu": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 43.324,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_myo": {
+      "preutterance": 0.345,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 43.726,
+      "duration": 0.485,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_mya": {
+      "preutterance": 0.35,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 44.223,
+      "duration": 0.49,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_mi": {
+      "preutterance": 0.205,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 44.725,
+      "duration": 0.345,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_myu": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 45.082,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ma": {
+      "preutterance": 0.19,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 45.454,
+      "duration": 0.33,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_me": {
+      "preutterance": 0.2,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 45.796,
+      "duration": 0.34,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_mo": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 46.148,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_mu": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 46.51,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ya": {
+      "preutterance": 0.285,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 46.897,
+      "duration": 0.425,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_yu": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 47.334,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ryo": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 47.751,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_rya": {
+      "preutterance": 0.32,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 48.118,
+      "duration": 0.46,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ri": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 48.59,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ryu": {
+      "preutterance": 0.205,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 48.962,
+      "duration": 0.345,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ra": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 49.319,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_re": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 49.711,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ro": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 50.088,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_ru": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 50.465,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "o_n": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 50.827,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-o-274536acaefe.mp3"
+    },
+    "n_wa": {
+      "preutterance": 0.19,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 0.012,
+      "duration": 0.33,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_u": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 0.354,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_a": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 0.666,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_n": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 0.978,
+      "duration": 0.23766666666666666,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_kya": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 1.2276666666666667,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_kyu": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 1.6396666666666666,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_gya": {
+      "preutterance": 0.36,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 2.0716666666666668,
+      "duration": 0.5,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_gyu": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 2.583666666666667,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ka": {
+      "preutterance": 0.2,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 2.9856666666666665,
+      "duration": 0.34,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ku": {
+      "preutterance": 0.205,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 3.337666666666667,
+      "duration": 0.345,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ga": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 3.6946666666666665,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_gu": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 4.056666666666667,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_sha": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 4.423666666666667,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_shu": {
+      "preutterance": 0.305,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 4.865666666666667,
+      "duration": 0.445,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ja": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 5.322666666666667,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_dya": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 5.709666666666666,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ju": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 6.096666666666667,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_dyu": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 6.4736666666666665,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_sa": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 6.850666666666666,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_su": {
+      "preutterance": 0.35,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 7.282666666666667,
+      "duration": 0.49,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_za": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 7.784666666666666,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_zu": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 8.156666666666666,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_cha": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 8.538666666666666,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_chu": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 8.945666666666666,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_tsa": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 9.312666666666667,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_tu": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 9.694666666666667,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_dhu": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 10.086666666666666,
+      "duration": 0.25966666666666666,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ta": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 10.358333333333333,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_tsu": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 10.740333333333334,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_da": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 11.132333333333333,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_du": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 11.514333333333333,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_nya": {
+      "preutterance": 0.35,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 11.911333333333333,
+      "duration": 0.49,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_nyu": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 12.413333333333334,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_na": {
+      "preutterance": 0.205,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 12.845333333333333,
+      "duration": 0.345,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_nu": {
+      "preutterance": 0.3,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 13.202333333333334,
+      "duration": 0.44,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_hya": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 13.654333333333334,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_hyu": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 14.036333333333333,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_bya": {
+      "preutterance": 0.205,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 14.408333333333333,
+      "duration": 0.345,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_byu": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 14.765333333333333,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_pya": {
+      "preutterance": 0.315,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 15.142333333333333,
+      "duration": 0.455,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_pyu": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 15.609333333333334,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_fa": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 16.001333333333335,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_fu": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 16.423333333333332,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ha": {
+      "preutterance": 0.315,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 16.85033333333333,
+      "duration": 0.455,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ba": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 17.317333333333334,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_bu": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 17.704333333333334,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_pa": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 18.081333333333333,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_pu": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 18.458333333333332,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_mya": {
+      "preutterance": 0.345,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 18.835333333333335,
+      "duration": 0.485,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_myu": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 19.332333333333334,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ma": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 19.719333333333335,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_mu": {
+      "preutterance": 0.19,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 20.141333333333332,
+      "duration": 0.33,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ya": {
+      "preutterance": 0.275,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 20.483333333333334,
+      "duration": 0.415,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_yu": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 20.910333333333334,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_rya": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 21.342333333333332,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ryu": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 21.749333333333333,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ra": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 22.116333333333333,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ru": {
+      "preutterance": 0.18,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 22.488333333333333,
+      "duration": 0.32,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_i": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 22.820333333333334,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ye": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 23.13233333333333,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_yo": {
+      "preutterance": 0.28,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 23.564333333333334,
+      "duration": 0.42,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_e": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 23.996333333333332,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_o": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 24.308333333333334,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_wo": {
+      "preutterance": 0.16,
+      "overlap": 0.08,
+      "midi": 60,
+      "start": 24.620333333333335,
+      "duration": 0.3,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_wi": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 24.932333333333332,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_we": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 25.294333333333334,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ki": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 25.656333333333333,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_kyo": {
+      "preutterance": 0.26,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 26.058333333333334,
+      "duration": 0.4,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ke": {
+      "preutterance": 0.205,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 26.470333333333333,
+      "duration": 0.345,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ko": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 26.827333333333332,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_gi": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 27.189333333333334,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_gyo": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 27.586333333333332,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ge": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 27.973333333333333,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_go": {
+      "preutterance": 0.185,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 28.35033333333333,
+      "duration": 0.325,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_shi": {
+      "preutterance": 0.325,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 28.687333333333335,
+      "duration": 0.465,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_se": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 29.16433333333333,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_so": {
+      "preutterance": 0.295,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 29.581333333333333,
+      "duration": 0.435,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ji": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 30.028333333333332,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ze": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 30.395333333333333,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_zo": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 30.792333333333332,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_si": {
+      "preutterance": 0.34,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 31.184333333333335,
+      "duration": 0.48,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_she": {
+      "preutterance": 0.265,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 31.676333333333332,
+      "duration": 0.405,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_sho": {
+      "preutterance": 0.285,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 32.093333333333334,
+      "duration": 0.425,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_zi": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 32.53033333333333,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_je": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 32.897333333333336,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_jo": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 33.294333333333334,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_dyo": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 33.666333333333334,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_chi": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 34.038333333333334,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_te": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 34.400333333333336,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_to": {
+      "preutterance": 0.23,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 34.772333333333336,
+      "duration": 0.37,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_di": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 35.154333333333334,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_de": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 35.52133333333333,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_do": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 35.888333333333335,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_tsi": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 36.25033333333333,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_tse": {
+      "preutterance": 0.215,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 36.62233333333333,
+      "duration": 0.355,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_tso": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 36.989333333333335,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ti": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 37.38133333333333,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_che": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 37.77333333333333,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_cho": {
+      "preutterance": 0.29,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 38.175333333333334,
+      "duration": 0.43,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_tyo": {
+      "preutterance": 0.2,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 38.617333333333335,
+      "duration": 0.24366666666666667,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_dhi": {
+      "preutterance": 0.205,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 38.873,
+      "duration": 0.345,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ni": {
+      "preutterance": 0.24,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 39.23,
+      "duration": 0.38,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_nyo": {
+      "preutterance": 0.31,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 39.622,
+      "duration": 0.45,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ne": {
+      "preutterance": 0.185,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 40.084,
+      "duration": 0.325,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_no": {
+      "preutterance": 0.19,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 40.421,
+      "duration": 0.33,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_hi": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 40.763,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_hyo": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 41.125,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_he": {
+      "preutterance": 0.315,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 41.487,
+      "duration": 0.455,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ho": {
+      "preutterance": 0.315,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 41.954,
+      "duration": 0.455,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_bi": {
+      "preutterance": 0.195,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 42.421,
+      "duration": 0.335,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_byo": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 42.768,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_be": {
+      "preutterance": 0.225,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 43.14,
+      "duration": 0.365,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_bo": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 43.517,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_pi": {
+      "preutterance": 0.195,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 43.904,
+      "duration": 0.335,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_pyo": {
+      "preutterance": 0.205,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 44.251,
+      "duration": 0.345,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_pe": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 44.608,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_po": {
+      "preutterance": 0.22,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 44.98,
+      "duration": 0.36,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_fi": {
+      "preutterance": 0.285,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 45.352,
+      "duration": 0.425,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_fe": {
+      "preutterance": 0.305,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 45.789,
+      "duration": 0.445,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_fo": {
+      "preutterance": 0.31,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 46.246,
+      "duration": 0.45,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_mi": {
+      "preutterance": 0.21,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 46.708,
+      "duration": 0.35,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_myo": {
+      "preutterance": 0.365,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 47.07,
+      "duration": 0.505,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_me": {
+      "preutterance": 0.27,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 47.587,
+      "duration": 0.41,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_mo": {
+      "preutterance": 0.19,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 48.009,
+      "duration": 0.33,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ri": {
+      "preutterance": 0.255,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 48.351,
+      "duration": 0.395,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ryo": {
+      "preutterance": 0.25,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 48.758,
+      "duration": 0.39,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_re": {
+      "preutterance": 0.245,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 49.16,
+      "duration": 0.385,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    },
+    "n_ro": {
+      "preutterance": 0.235,
+      "overlap": 0.14,
+      "midi": 60,
+      "start": 49.557,
+      "duration": 0.375,
+      "sprite": "assets/miku-vcv/vcv-n-91e3842a17e0.mp3"
+    }
+  },
+  "tianyi": {
+    "a_b": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.012,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_p": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.204,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_m": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.396,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_f": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.588,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_d": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.78,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_t": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.972,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_n": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.164,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_l": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.356,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_g": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.548,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_k": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.74,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_h": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.932,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_j": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.124,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_q": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.316,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_x": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.508,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_zh": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.7,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_ch": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.892,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_sh": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.084,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_r": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.276,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_z": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.468,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_c": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.66,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_s": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.852,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_y": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.044,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_w": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.236,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "a_0": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.428,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-a-8b824845b763.mp3"
+    },
+    "u_b": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.012,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_p": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.204,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_m": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.396,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_f": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.588,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_d": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.78,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_t": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.972,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_n": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.164,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_l": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.356,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_g": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.548,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_k": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.74,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_h": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.932,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_j": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.124,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_q": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.316,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_x": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.508,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_zh": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.7,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_ch": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.892,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_sh": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.084,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_r": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.276,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_z": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.468,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_c": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.66,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_s": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.852,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_y": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.044,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_w": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.236,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "u_0": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.428,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-u-6785cd90d06f.mp3"
+    },
+    "e_b": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.012,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_p": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.204,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_m": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.396,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_f": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.588,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_d": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.78,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_t": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.972,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_n": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.164,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_l": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.356,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_g": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.548,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_k": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.74,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_h": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.932,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_j": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.124,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_q": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.316,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_x": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.508,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_zh": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.7,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_ch": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.892,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_sh": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.084,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_r": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.276,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_z": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.468,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_c": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.66,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_s": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.852,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_y": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.044,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_w": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.236,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "e_0": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.428,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-e-5cb173e52222.mp3"
+    },
+    "i_b": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.012,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_p": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.204,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_m": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.396,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_f": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.588,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_d": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.78,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_t": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.972,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_n": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.164,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_l": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.356,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_g": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.548,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_k": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.74,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_h": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.932,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_j": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.124,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_q": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.316,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_x": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.508,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_zh": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.7,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_ch": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.892,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_sh": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.084,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_r": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.276,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_z": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.468,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_c": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.66,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_s": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.852,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_y": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.044,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_w": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.236,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "i_0": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.428,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-i-e94659ae0839.mp3"
+    },
+    "v_b": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.012,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_p": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.204,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_m": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.396,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_f": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.588,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_d": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.78,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_t": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.972,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_n": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.164,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_l": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.356,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_g": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.548,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_k": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.74,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_h": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.932,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_j": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.124,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_q": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.316,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_x": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.508,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_zh": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.7,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_ch": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.892,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_sh": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.084,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_r": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.276,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_z": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.468,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_c": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.66,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_s": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.852,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_y": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.044,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_w": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.236,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "v_0": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.428,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-v-f14e8f4c5778.mp3"
+    },
+    "ir_b": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.012,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_p": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.204,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_m": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.396,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_f": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.588,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_d": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.78,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_t": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.972,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_n": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.164,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_l": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.356,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_g": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.548,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_k": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.74,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_h": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.932,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_j": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.124,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_q": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.316,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_x": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.508,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_zh": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.7,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_ch": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.892,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_sh": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.084,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_r": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.276,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_z": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.468,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_c": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.66,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_s": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.852,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_y": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.044,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_w": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.236,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "ir_0": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.428,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ir-1a0c1b33be2d.mp3"
+    },
+    "n_b": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.012,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_p": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.204,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_m": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.396,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_f": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.588,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_d": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.78,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_t": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.972,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_n": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.164,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_l": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.356,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_g": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.548,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_k": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.74,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_h": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.932,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_j": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.124,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_q": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.316,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_x": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.508,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_zh": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.7,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_ch": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.892,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_sh": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.084,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_r": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.276,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_z": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.468,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_c": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.66,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_s": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.852,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_y": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.044,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_w": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.236,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "n_0": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.428,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-n-8de12a53206d.mp3"
+    },
+    "ng_b": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.012,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_p": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.204,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_m": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.396,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_f": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.588,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_d": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.78,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_t": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 0.972,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_n": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.164,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_l": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.356,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_g": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.548,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_k": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.74,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_h": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 1.932,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_j": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.124,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_q": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.316,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_x": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.508,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_zh": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.7,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_ch": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 2.892,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_sh": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.084,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_r": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.276,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_z": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.468,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_c": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.66,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_s": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 3.852,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_y": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.044,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_w": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.236,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    },
+    "ng_0": {
+      "preutterance": 0.095,
+      "overlap": 0.028,
+      "midi": 60,
+      "start": 4.428,
+      "duration": 0.18,
+      "sprite": "assets/tianyi-vc/vc-ng-53b7c4ae2979.mp3"
+    }
+  }
 }

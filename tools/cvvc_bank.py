@@ -69,8 +69,9 @@ def pack_sprites(groups, dist, folder, prefix, rate=24000, bitrate='160k'):
         versioned = target.with_name(f'{prefix}-{category}-{digest}.mp3')
         target.replace(versioned)
         decoded = decode(versioned, rate)
-        if abs(len(decoded)-len(pcm)) > 1:
-            raise ValueError(f'Encoder delay/padding mismatch: {versioned}')
+        needed = max(round((entry['start']+entry['duration'])*rate) for entry in local.values())
+        if len(decoded) < needed or abs(len(decoded)-len(pcm)) > round(rate*.05):
+            raise ValueError(f'Encoder delay/padding mismatch: {versioned} ({len(decoded)} decoded, {len(pcm)} input, {needed} needed)')
         for key, meta in local.items():
             entries[key] = {**meta, 'sprite': versioned.relative_to(dist).as_posix()}
     return entries

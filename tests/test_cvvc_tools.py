@@ -8,6 +8,7 @@ import sys
 import tempfile
 import unittest
 import wave
+import warnings
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -120,6 +121,31 @@ class ToolTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'exceed'):
             merge_manifest(self.path, 'miku', {'a_ka': {'sprite': target.name}})
         self.assertEqual((self.path/'transitions.json').read_bytes(), before)
+
+    @unittest.skipUnless(shutil.which('ffmpeg'), 'FFmpeg required for OTO checks')
+    def test_unusable_oto_entry_falls_back_without_disabling_valid_neighbors(self):
+        source = self.path/'C4'
+        source.mkdir()
+        wav(source/'tone.wav', 1)
+        (source/'oto.ini').write_text('tone.wav=a かC4,100,140,-360,100,30\ntone.wav=i かC4,500,200,400,200,30\n', encoding='utf-8')
+        with warnings.catch_warnings(record=True) as skipped:
+            warnings.simplefilter('always')
+            count, _ = build.build(source, self.path/'dist')
+        self.assertEqual(count, 1)
+        self.assertTrue(any('no usable vowel' in str(w.message) for w in skipped))
+
+    @unittest.skipUnless(shutil.which('ffmpeg'), 'FFmpeg required for export checks')
+    def test_native_timing_keeps_the_prebeat_initial_consonant_in_base_sample(self):
+        dist = self.path/'dist'
+        dump(dist/'catalog.json', {'tianyi': {'phonemes': {'ba': {'path': 'old.wav'}}}})
+        dump(self.path/'base.json', {'version': 1, 'bank': 'tianyi', 'kind': 'base', 'baseMidi': 60, 'notes': [{'start': .2, 'duration': .7, 'syllable': 'ba', 'lyric': 'ba', 'filename': 'ba.wav'}]})
+        wav(self.path/'base.wav', 1)
+        alignment = [{'start': .2, 'lyric': 'ba', 'phones': [{'start': .1, 'error': False}, {'start': .2, 'error': False}]}]
+        slice_bank.slice_bank(self.path/'base.json', self.path/'base.wav', dist, alignment=alignment)
+        with wave.open(str(dist/'assets/tianyi-full/ba.wav')) as audio:
+            self.assertEqual(audio.getnframes(), round(.805*24000))
+        updated = json.loads((dist/'catalog.json').read_text(encoding='utf-8'))
+        self.assertAlmostEqual(updated['tianyi']['phonemes']['ba']['duration'], .805)
 
 
 if __name__ == '__main__':
