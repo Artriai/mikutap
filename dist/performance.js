@@ -1,15 +1,16 @@
 import {synthesize} from './synthesis.js';
-import {naturalSyllable} from './natural.js?v=1';
-import {compileScore} from './score.js?v=3';
+import {naturalSyllable} from './natural.js?v=2';
+import {compileScore} from './score.js?v=4';
 import {PreparedCache} from './prepared-cache.js';
 const preparedCache=new PreparedCache();
 import {readMidi} from './midi.js';
 import {playSample} from './sampler.js?v=2';
-import {shapePhrases} from './articulation.js?v=2';
+import {shapePhrases} from './articulation.js?v=3';
 import {AccompanimentCache,playAccompaniment} from './accompaniment.js?v=2';
 const accompaniments=new AccompanimentCache();
 const audio=window.MikutapVoice;
-const rendered=new Map();let renderBytes=0;
+const rendered=new Map();let renderBytes=0,lastYield=0;
+function nowMs(){return globalThis.performance?.now?.()??Date.now()}
 let engine='psola',keepSilent=false,owner=null;
 let version=0,current=null,position=0,anchor=0,next=0,state='stopped',timer=null,raf=null,handles=new Set(),flashed=new Set(),priorBacktrack=null;
 function notify(){document.getElementById('view').dataset.transport=state;document.getElementById('view').dataset.playbackEngine=engine;document.dispatchEvent(new CustomEvent('mikutap:transport',{detail:{state,position:getPosition(),duration:current?.duration??0,owner}}));}
@@ -18,15 +19,15 @@ function restoreBacktrack(release=false){if(keepSilent){if(release){window.Mikut
 function cancel(){clearInterval(timer);cancelAnimationFrame(raf);timer=null;raf=null;for(const handle of handles)handle.stop();handles.clear();}
 function stop(){version++;cancel();position=0;state='stopped';owner=null;flashed.clear();restoreBacktrack(true);window.MikutapVisual?.performance?.(false);notify();}
 async function prepare(group,natural=false){
- const source=await audio.getBuffer(group.voice,group.syllable,group.midi);
+ const source=natural&&group.buffer?group.buffer:await audio.getBuffer(group.voice,group.syllable,group.midi,natural?{fullBank:true}:undefined);
  const meta=(await audio.getCatalog())[group.voice].phonemes[group.syllable];
  const key=JSON.stringify([natural,group.voice,group.syllable,group.baseMidi,group.playDuration??group.duration,group.playPitches??group.pitches]);
  if(rendered.has(key))return rendered.get(key);
- // Yield between notes so a long score does not freeze pointer interaction.
- await new Promise(resolve=>setTimeout(resolve,0));
+ // Yield periodically so a long score never blocks pointer interaction or wastes 4ms per note.
+ if(nowMs()-lastYield>=14){await new Promise(resolve=>setTimeout(resolve,0));lastYield=nowMs();}
  const samples=natural?naturalSyllable(source,{baseMidi:group.baseMidi,duration:group.playDuration??group.duration,pitches:group.playPitches??group.pitches,profile:group.profile}):synthesize(source.getChannelData(0),source.sampleRate,{baseMidi:audio.getSampleMeta?.(source)?.midi??meta.midi,duration:group.duration,pitches:group.pitches});
  const buffer=audio.getContext().createBuffer(1,samples.length,source.sampleRate);buffer.copyToChannel(samples,0);
- if(renderBytes+samples.byteLength>32*1024*1024){rendered.clear();renderBytes=0;}
+ if(renderBytes+samples.byteLength>64*1024*1024){rendered.clear();renderBytes=0;}
  rendered.set(key,buffer);renderBytes+=samples.byteLength;return buffer;
 }
 function schedule(){
@@ -64,10 +65,16 @@ async function buildPrepared(score,selectedEngine,onProgress,defaultVoice){
  const catalog=await audio.getCatalog(),prepared=compileScore(score,catalog,defaultVoice);
  prepared.accompaniment=await accompaniments.load(audio.getContext(),score.accompaniment);
  const unique=[...new Map(prepared.groups.map(group=>[group.voice+':'+group.syllable,group])).values()];let nextLoad=0,done=0;
+ const bankOpts=selectedEngine==='natural'?{fullBank:true}:undefined;
  const total=unique.length+(selectedEngine==='natural'?prepared.groups.length:0);
- await Promise.all(Array.from({length:8},async()=>{while(nextLoad<unique.length){const group=unique[nextLoad++];await audio.getBuffer(group.voice,group.syllable,group.midi);done++;onProgress?.({loaded:done,total})}}));
+ await Promise.all(Array.from({length:8},async()=>{while(nextLoad<unique.length){const group=unique[nextLoad++];await audio.getBuffer(group.voice,group.syllable,group.midi,bankOpts);done++;onProgress?.({loaded:done,total})}}));
  for(const group of prepared.groups){
-  if(['sampler','natural'].includes(selectedEngine)){group.buffer=await audio.getBuffer(group.voice,group.syllable,group.midi);group.baseMidi=audio.getSampleMeta?.(group.buffer)?.midi??catalog[group.voice].phonemes[group.syllable].midi;group.profile=audio.getProfile?.(group.buffer)}
+  if(['sampler','natural'].includes(selectedEngine)){
+   group.buffer=await audio.getBuffer(group.voice,group.syllable,group.midi,bankOpts);
+   const phoneme=catalog[group.voice].phonemes[group.syllable];
+   group.baseMidi=audio.getSampleMeta?.(group.buffer)?.midi??(selectedEngine==='natural'&&phoneme.expandedPath?60:phoneme.midi);
+   group.profile=audio.getProfile?.(group.buffer);
+  }
   else group.buffer=await prepare(group);
  }
  if(['sampler','natural'].includes(selectedEngine)&&score.articulation==='legato')shapePhrases(prepared.groups,{natural:selectedEngine==='natural'});

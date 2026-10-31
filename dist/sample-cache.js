@@ -86,9 +86,21 @@
    })();
    this.jobs.set(voice,job);job.catch(()=>{if(this.jobs.get(voice)===job)this.jobs.delete(voice)});return job;
   }
-  get(voice,id,midi){
+  rawFull(voice,id){
+   var sample=this.catalog[voice]?.phonemes[id];
+   if(!sample)return Promise.reject(Error('音节不存在：'+voice+':'+id));
+   if(!sample.expandedPath)return this.get(voice,id);
+   var key='full:'+voice+':'+id;
+   if(!this.buffers.has(key)){
+    var job=this.fetch(sample.expandedPath).then(function(r){if(!r.ok)throw Error('音频加载失败：'+key);return r.arrayBuffer()}).then(bytes=>this.context().decodeAudioData(bytes)).then(buffer=>{this.metadata.set(buffer,{...sample,path:sample.expandedPath,midi:60,originalId:undefined,original:false});return buffer});
+    this.buffers.set(key,job);job.catch(()=>{if(this.buffers.get(key)===job)this.buffers.delete(key)});
+   }
+   return this.buffers.get(key);
+  }
+  get(voice,id,midi,options){
    var key=voice+':'+id;
    const sample=this.catalog[voice]?.phonemes[id];
+   if(options?.fullBank&&sample?.expandedPath)return this.rawFull(voice,id);
    if(sample?.originalId!==undefined){
     const choices=this.catalog[voice].originalBank.samples.filter(s=>s.syllable===id),selected=Number.isFinite(midi)?choices.reduce((a,b)=>Math.abs(a.midi-midi)<=Math.abs(b.midi-midi)?a:b):choices.find(s=>s.id===sample.originalId);
     return this.loadOriginal(voice).then(()=>this.originals.get(voice+':'+selected.id));

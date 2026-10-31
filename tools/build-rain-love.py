@@ -2,6 +2,7 @@
 Offline prerequisites: Demucs htdemucs, faster-whisper small, Mandarin wav2vec2,
 librosa, scipy, numpy, soundfile, pypinyin, torch and transformers.
 Use: python tools/build-rain-love.py /absolute/work-directory [stage]
+     python tools/build-rain-love.py --polish
 Stage: transcribe, align, ctc, pitch, export, or all. Stages cache intermediate
 analysis; no original recorded vocals are copied into the hosted application.
 """
@@ -9,10 +10,13 @@ from pathlib import Path
 import json,re,sys,subprocess,os
 os.environ.setdefault('HF_HUB_DISABLE_TELEMETRY','1')
 import numpy as np
-import soundfile as sf
-from pypinyin import lazy_pinyin
+try:
+ import soundfile as sf
+ from pypinyin import lazy_pinyin
+except ImportError:
+ sf=None;lazy_pinyin=None
 ROOT=Path(__file__).resolve().parents[1]
-BASE=Path(sys.argv[1]).resolve()
+BASE=Path(sys.argv[1]).resolve() if len(sys.argv)>1 and not sys.argv[1].startswith('--') else ROOT
 def read(name):return json.loads((BASE/name).read_text())
 def save(name,data):
  (BASE/name).write_text(json.dumps(data,ensure_ascii=False,separators=(',',':')))
@@ -181,16 +185,113 @@ def export():
   note={'time':round(start,5),'duration':round(end-start,5),'syllable':r['syllable'],'midi':midi,'velocity':.88,'visual':i%32,'phrase':r['line'],'pitches':points}
   if note['duration']<=.04:raise ValueError(('short note',i))
   notes.append(note)
- score={'title':'雨爱','voice':'tianyi','engine':'natural','articulation':'legato','duration':round(duration,5),'accompaniment':{'path':'assets/songs/rain-love-instrumental.mp3','gain':.48},'notes':notes,'source':{'song':'杨丞琳 / 雨爱','composer':'金大洲','lyricist':'Wonderful','audioUrl':'https://2110-rainie-yang.mp3.pm/song/128260436-yu-ai/','method':'Complete MP3; local Demucs separation, Whisper recognition, constrained Mandarin CTC alignment and pYIN pitch extraction; live Tianyi syllable sampler. No original recorded vocals shipped.'}}
+ score={'title':'雨爱','voice':'tianyi','engine':'natural','articulation':'legato','duration':round(duration,5),'accompaniment':{'path':'assets/songs/rain-love-instrumental.mp3','gain':.48},'notes':notes,'source':{'song':'杨丞琳 / 雨爱','composer':'金大洲','lyricist':'Wonderful','audioUrl':'https://2110-rainie-yang.mp3.pm/song/128260436-yu-ai/','method':'Complete MP3; local Demucs separation, Whisper recognition, constrained Mandarin CTC alignment, pYIN pitch extraction with phrase Viterbi/parallel-section octave continuity; live Tianyi syllable PSOLA sampler. No original recorded vocals shipped.'}}
  # Keep three seconds of lead-in; accompaniment stays at its original offset.
  cut=round(notes[0]['time']-3,5)
  score['introTrim']=cut;score['originalDuration']=score['duration']
  score['duration']=round(score['duration']-cut,5);score['accompaniment']['offset']=cut
  for note in notes:note['time']=round(note['time']-cut,5)
+ repair_melody(score)
  (ROOT/'dist/songs/rain-love.json').write_text(json.dumps(score,ensure_ascii=False,separators=(',',':')))
  subprocess.run(['ffmpeg','-v','error','-y','-i',str(BASE/'separated/htdemucs/source/no_vocals.wav'),'-codec:a','libmp3lame','-b:a','160k','-map_metadata','-1',str(ROOT/'dist/assets/songs/rain-love-instrumental.mp3')],check=True)
  print(json.dumps({'syllables':len(notes),'phonemes':len(set(n['syllable'] for n in notes)),'duration':score['duration'],'first':notes[0]['time'],'last':notes[-1]['time']+notes[-1]['duration'],'noVoicing':failures,'pitchPoints':sum(len(n['pitches']) for n in notes)}),flush=True)
+
+PARALLEL_PHRASES=[[0,19],[1,20],[2,21],[3,22],[4,23],[5,24],[6,25],[7,26],[8,27],[9,28],[10,29],[11,30],[12,31],[13,32],[14,33,38],[15,34,39],[16,35,40],[17,36,41],[18,37,42]]
+def repair_melody(score):
+ """Repair pYIN subharmonic octave drops (58.3..61.2 vs 70.3..73.2), intra-note
+ octave splits, and accompaniment bleed using phrase Viterbi continuity and
+ parallel-section consensus while preserving low B3/C#4 verse phrases and 71->64 melismas."""
+ notes=score['notes'];by_phrase={}
+ for n in notes:by_phrase.setdefault(n['phrase'],[]).append(n)
+ for pid,pnotes in by_phrase.items():
+  pmed=float(np.median([p['midi'] for pn in pnotes for p in pn['pitches']]))
+  for n in pnotes:
+   pts=n['pitches'];vals=np.array([p['midi'] for p in pts],dtype=float);hi,lo=float(vals.max()),float(vals.min());changed=False
+   if pmed<62.5 and hi>=68.0 and lo<62.0:
+    for k in range(len(vals)):
+     if vals[k]>=67.5:vals[k]=round(vals[k]-12.0 if vals[k]-12.0>=58.0 else lo,2);changed=True
+   elif hi>=66.5 and lo<61.0 and (hi-lo)>=7.2 and abs((lo+12.0)-hi)<=5.0:
+    for k in range(len(vals)):
+     if vals[k]<61.5 and (hi-vals[k])>=6.5:vals[k]=round(min(74.5,vals[k]+12.0),2);changed=True
+   if changed:
+    for p,nv in zip(pts,vals):p['midi']=round(float(nv),2)
+    n['midi']=pts[0]['midi']
+ ref_pitch={}
+ for grp in PARALLEL_PHRASES:
+  if any(pid not in by_phrase for pid in grp):continue
+  lengths=[len(by_phrase[pid]) for pid in grp]
+  if len(set(lengths))==1:
+   L=lengths[0];avg_pmed=float(np.mean([np.median([p['midi'] for pn in by_phrase[pid] for p in pn['pitches']]) for pid in grp]))
+   for pos in range(L):
+    meds=[float(np.median([p['midi'] for p in by_phrase[pid][pos]['pitches']])) for pid in grp]
+    if avg_pmed<62.5:
+     lo_m=[m for m in meds if m<64.0]
+     if lo_m and (max(meds)-min(lo_m))>=4.2:
+      c=float(np.median(lo_m))
+      for pid in grp:ref_pitch[(pid,pos)]=c
+    else:
+     hi_m=[m for m in meds if m>=64.5]
+     if hi_m and (max(hi_m)-min(meds))>=4.2:
+      c=float(np.median(hi_m))
+      for pid in grp:ref_pitch[(pid,pos)]=c
+ for pid,pnotes in sorted(by_phrase.items()):
+  L=len(pnotes);meds=[float(np.median([p['midi'] for p in n['pitches']])) for n in pnotes];candidates=[]
+  for pos,n in enumerate(pnotes):
+   m=meds[pos];cands=[(0.0,m)]
+   if m<61.2 and m+12.0<=74.5:cands.append((12.0,m+12.0))
+   if (pid,pos) in ref_pitch:
+    tgt=ref_pitch[(pid,pos)]
+    if abs(tgt-m)>=4.0 and all(abs(tgt-cv)>1.8 for _,cv in cands):cands.append((round(tgt-m,2),tgt))
+   candidates.append(cands)
+  dp=[{} for _ in range(L)];back=[{} for _ in range(L)]
+  for ci,(sh,val) in enumerate(candidates[0]):
+   dp[0][ci]=(0.0 if sh==0 else 1.4)+(abs(val-ref_pitch[(pid,0)])*1.1 if (pid,0) in ref_pitch else 0.0);back[0][ci]=None
+  for pos in range(1,L):
+   gap=pnotes[pos]['time']-(pnotes[pos-1]['time']+pnotes[pos-1]['duration'])
+   sub_break=(gap>=0.12) or (L==10 and pos==5)
+   for ci,(sh,val) in enumerate(candidates[pos]):
+    nc=(0.0 if sh==0 else 1.4)+(abs(val-ref_pitch[(pid,pos)])*1.1 if (pid,pos) in ref_pitch else 0.0)
+    bc,bp=1e9,0
+    for pi,(_,pval) in enumerate(candidates[pos-1]):
+     jmp=abs(val-pval);c=dp[pos-1][pi]+jmp*(0.25 if sub_break else 0.65)+(max(0.0,jmp-6.0)**2)*(0.12 if sub_break else 0.45)+nc
+     if c<bc:bc,bp=c,pi
+    dp[pos][ci]=bc;back[pos][ci]=bp
+  cur=min(dp[L-1],key=lambda k:dp[L-1][k]);chosen=[0]*L
+  for pos in range(L-1,-1,-1):chosen[pos]=cur;cur=back[pos][cur]
+  for pos,ci in enumerate(chosen):
+   sh,_=candidates[pos][ci]
+   if abs(sh)>0.1:
+    n=pnotes[pos]
+    for p in n['pitches']:p['midi']=round(min(75.5,max(58.0,p['midi']+sh)),2)
+    n['midi']=n['pitches'][0]['midi']
+ for pid in (12,31):
+  pnotes=by_phrase.get(pid,[])
+  if len(pnotes)>=3 and [n['syllable'] for n in pnotes[-3:]]==['lei','ni','la']:
+   for n,tgt in zip(pnotes[-3:],[64.2,65.8,64.0]):
+    om=float(np.median([p['midi'] for p in n['pitches']]))
+    if abs(om-tgt)>3.0:
+     for p in n['pitches']:p['midi']=round(tgt+(p['midi']-om)*0.25,2)
+     n['midi']=n['pitches'][0]['midi']
+ for n in notes:
+  vals=np.array([p['midi'] for p in n['pitches']],dtype=float)
+  if vals.max()-vals.min()>8.2:
+   med=float(np.median(vals))
+   for p in n['pitches']:
+    if abs(p['midi']-med)>4.2:p['midi']=round(med+float(np.sign(p['midi']-med))*2.5,2)
+   n['midi']=n['pitches'][0]['midi']
+ return score
+
+def polish_existing():
+ path=ROOT/'dist/songs/rain-love.json'
+ score=json.loads(path.read_text(encoding='utf-8'))
+ repair_melody(score)
+ path.write_text(json.dumps(score,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
+ print('Polished',path,'notes=',len(score['notes']))
+
 if __name__=='__main__':
- stages={'transcribe':transcribe,'align':align,'ctc':ctc,'pitch':pitch,'export':export};stage=sys.argv[2] if len(sys.argv)>2 else 'all'
- for name,fn in stages.items():
-  if stage in ['all',name]:fn()
+ if len(sys.argv)>1 and sys.argv[1]=='--polish':
+  polish_existing()
+ else:
+  stages={'transcribe':transcribe,'align':align,'ctc':ctc,'pitch':pitch,'export':export};stage=sys.argv[2] if len(sys.argv)>2 else 'all'
+  for name,fn in stages.items():
+   if stage in ['all',name]:fn()

@@ -19,11 +19,40 @@
   $('#view').attr({'data-voice':bank,'data-count':catalog?(playing?32:catalog[bank].syllables.length):0,'data-manual-count':32});
 
  }
+ function buildVocalImpulse(context){
+  var sr=context.sampleRate||44100,seconds=.82,len=Math.max(1,Math.round(sr*seconds)),pre=Math.round(sr*.016);
+  var ir=context.createBuffer(2,len,sr),seed=2463534242;
+  function rand(){seed=(seed^(seed<<13))>>>0;seed=(seed^(seed>>>17))>>>0;seed=(seed^(seed<<5))>>>0;return (seed/2147483648)-1}
+  for(var ch=0;ch<2;ch++){
+   var data=ir.getChannelData(ch),lp=0;
+   for(var i=pre;i<len;i++){
+    var t=(i-pre)/(len-pre),env=Math.pow(1-t,3.4)*Math.exp(-t*2.4);
+    var early=(i-pre<sr*.045&&((i-pre+ch*97)%Math.max(1,Math.round(sr*.0073))===0))?.35:0;
+    lp=lp*.48+(rand()+early)*.52;
+    data[i]=lp*env*.38;
+   }
+  }
+  return ir;
+ }
  function connect(context){
-  ctx=context;if(!master){master=ctx.createGain();master.gain.value=.68;var limiter=ctx.createDynamicsCompressor();limiter.threshold.value=-8;limiter.ratio.value=6;master.connect(limiter);limiter.connect(ctx.destination)}
+  ctx=context;if(!master){
+   master=ctx.createGain();master.gain.value=.68;
+   var limiter=ctx.createDynamicsCompressor();limiter.threshold.value=-8;limiter.ratio.value=6;
+   master.connect(limiter);
+   if(typeof ctx.createConvolver==='function'&&typeof ctx.createBiquadFilter==='function'&&typeof ctx.createBuffer==='function'){
+    try{
+     var hp=ctx.createBiquadFilter();hp.type='highpass';hp.frequency.value=190;
+     var lp=ctx.createBiquadFilter();lp.type='lowpass';lp.frequency.value=4400;
+     var verb=ctx.createConvolver();verb.buffer=buildVocalImpulse(ctx);
+     var wet=ctx.createGain();wet.gain.value=.15;
+     master.connect(hp);hp.connect(lp);lp.connect(verb);verb.connect(wet);wet.connect(limiter);
+    }catch(e){}
+   }
+   limiter.connect(ctx.destination);
+  }
   if(ctx.state==='suspended')ctx.resume().catch(function(){});
  }
- function bufferFor(voice,id,midi){return cache.get(voice,id,midi)}
+ function bufferFor(voice,id,midi,options){return cache.get(voice,id,midi,options)}
  async function loadBank(voice,progress){
   await catalogReady;if(!catalog[voice])throw Error('未知音源：'+voice);
   if(bankLoads.has(voice)){await bankLoads.get(voice);if(progress)progress(1);return}

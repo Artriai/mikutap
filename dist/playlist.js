@@ -1,5 +1,5 @@
 /* Homepage playlist owns its transport; manual START stays separate. */
-import './performance.js?v=14';
+import './performance.js?v=15';
 import {convertScore} from './voice-conversion.js?v=2';
 const panel=document.getElementById('playlist'),rows=document.getElementById('playlist_tracks');
 const toggle=document.getElementById('player_toggle'),stopButton=document.getElementById('player_stop');
@@ -68,7 +68,7 @@ document.addEventListener('mikutap:voicechange',()=>{
 });
 document.addEventListener('mikutap:transport',event=>{render();if(event.detail.state==='ended'&&event.detail.owner==='playlist')status('演唱结束')});
 document.addEventListener('mikutap:exit',stop);document.addEventListener('mikutap:manualstart',stop);
-fetch('songs/playlist.json?v=8').then(r=>{if(!r.ok)throw Error('播放列表加载失败');return r.json()}).then(data=>{
+fetch('songs/playlist.json?v=9').then(r=>{if(!r.ok)throw Error('播放列表加载失败');return r.json()}).then(data=>{
  tracks=data.tracks;for(const track of tracks){const row=document.createElement('button');row.type='button';row.className='playlist_track';row.dataset.track=track.id;row.innerHTML='<span class="track_number"></span><span class="track_info"><span class="track_title"></span><small></small></span><span class="track_action">播放</span>';row.querySelector('.track_number').textContent=String(rows.children.length+1).padStart(2,'0');row.querySelector('.track_title').textContent=track.title;rows.append(row)}render();
 }).catch(error=>{status('播放列表加载失败，请刷新重试');console.error(error)});
 setInterval(()=>{if(current)render()},100);render();

@@ -25,10 +25,11 @@ test('a sustained syllable glides continuously across pitch control points',()=>
   assert.ok(Math.abs(actual-want)/want<.035,`${time}: ${actual} vs ${want}`);
  }
 });
-test('real rain-love syllables retain audible vowels throughout short and long notes',()=>{
+test('real rain-love syllables retain audible vowels and steady sustain without nasal collapse',()=>{
  const catalog=JSON.parse(fs.readFileSync(new URL('../dist/catalog.json',import.meta.url))),sandbox={window:{},Map,WeakMap,Set,Float32Array};
  vm.runInNewContext(fs.readFileSync(new URL('../dist/sample-cache.js',import.meta.url),'utf8'),sandbox);
  const cache=new sandbox.window.MikutapBankCache(catalog,()=>({}));
+ const rmsOf=arr=>Math.sqrt(arr.reduce((s,v)=>s+v*v,0)/arr.length);
  for(const id of ['chuang','wai','de','qi','shi','yu','qing']){
   const bytes=fs.readFileSync(new URL('../dist/'+catalog.tianyi.phonemes[id].path,import.meta.url));let pos=12,pcm;
   while(pos+8<=bytes.length){const tag=bytes.toString('ascii',pos,pos+4),size=bytes.readUInt32LE(pos+4);pos+=8;if(tag==='fmt ')assert.equal(bytes.readUInt32LE(pos+4),sr);if(tag==='data')pcm=bytes.subarray(pos,pos+size);pos+=size+(size%2)}
@@ -37,11 +38,25 @@ test('real rain-love syllables retain audible vowels throughout short and long n
    const out=naturalSyllable(raw,{duration,profile:cache.profile(raw),pitches:[{time:0,midi:68}]});
    assert.ok(out.every(Number.isFinite));
    for(let t=duration*.3;t<duration*.75;t+=.04){
-    const frame=out.slice(Math.round(t*sr),Math.round((t+.02)*sr)),rms=Math.sqrt(frame.reduce((s,v)=>s+v*v,0)/frame.length);
+    const frame=out.slice(Math.round(t*sr),Math.round((t+.02)*sr)),rms=rmsOf(frame);
     assert.ok(rms>.015,`${id} ${duration}s: no silent hole at ${t}s (${rms})`);
+   }
+   if(duration===1.8){
+    const early=rmsOf(out.slice(Math.round(.35*sr),Math.round(.75*sr))),late=rmsOf(out.slice(Math.round(1.0*sr),Math.round(1.4*sr)));
+    assert.ok(late>=early*.65,`${id} 1.8s sustain keeps open vowel energy (${late} vs ${early})`);
    }
   }
  }
+});
+test('adaptive pitch-mark tracking handles falling-tone source F0 without phase cancellation',()=>{
+ let phase=0;
+ const x=Float32Array.from({length:Math.round(sr*.45)},(_,i)=>{
+  const f0=295-75*(i/(sr*.45));phase+=2*Math.PI*f0/sr;
+  return .24*Math.sin(phase)+.12*Math.sin(2*phase)+.06*Math.sin(3*phase);
+ });
+ const out=naturalSyllable(buffer(x),{duration:1.1,baseMidi:60,pitches:[{time:0,midi:67}]}),mid=out.slice(Math.round(.2*sr),Math.round(.9*sr));
+ const rms=Math.sqrt(mid.reduce((s,v)=>s+v*v,0)/mid.length);
+ assert.ok(rms>.12,`falling-tone source retains coherent harmonic energy (${rms})`);
 });
 test('natural joins close words in the same phrase and preserves phrase breaks',()=>{
  const groups=[0,.4,.9].map((time,i)=>({time,duration:.2,voice:'tianyi',phrase:i<2?0:1,baseMidi:60,pitches:[{time:0,midi:64}],index:i}));

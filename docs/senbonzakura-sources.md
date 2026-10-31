@@ -4,8 +4,8 @@
 - 曲谱：https://vocaloader.app/sequences/3548 ，Kate 上传的「千本桜 VSQ」。
 - 使用第 1、2 音轨 main vivid / sub 的完整主唱及第 9 轨应答声部，去重后 657 个事件、66 个不同音节。
 - 基准速度约 154 BPM。裁掉首个歌词前约 32.57 秒和无歌词尾奏，保留全部歌词及内部休止。实时人声约 182.49 秒。
-- `dist/playlist.js` 只加载 JSON 事件表，调用 `Mikutap.play(score,{engine:'sampler',muteBacktrack:true})`。没有整曲人声录音；歌曲自己的纯器乐伴奏由曲谱 accompaniment 字段指定，独立加载。
-- `dist/sampler.js` 对每个音符使用 `MikutapVoice.getBuffer()` 返回的同一份原始音节 AudioBuffer，播放速度按 MIDI 音高变化。有声长音使用相位对齐的元音循环，短淡入淡出抑制边界爆音。没有振荡器或人声波形重建。
+- `dist/playlist.js` 只加载 JSON 事件表，调用 `Mikutap.play(score,{engine:score.engine||'sampler',muteBacktrack:true})`（当前曲谱默认 `engine: 'natural'`）。没有整曲人声录音；歌曲自己的纯器乐伴奏由曲谱 accompaniment 字段指定，独立加载。
+- `natural` 模式下统一加载 `assets/miku-full/*.wav`（44.1 kHz C4 基准音高）或 `assets/tianyi-full/*.wav`，通过自适应周期追踪 PSOLA 独立控制音高与时长，保持元音共振峰，不改动 START 手动模式的 32 个原版 MP3。`sampler` 模式仍保留以兼容旧程序调用。
 - `assets/basic/*.mp3` 是两位歌手的基础音节合并文件，用于减少请求；它们不包含歌曲。其他歌词音节读取独立 WAV。准备歌曲时并行缓存用到的 66 个音节。
 - 调度与原作动画使用同一 AudioContext 时间轴。暂停、跳转和停止同时取消已排程的人声与器乐伴奏，恢复时使用同一个起点重建两路音频。原作节拍只临时锁定，不写入 BACKTRACK 偏好。
 - 此路径保留单音节采样的机械连接感；未应用 VSQ 的专业音色参数及颤音，不声称达到商业歌声引擎的连续咬字。
@@ -37,3 +37,10 @@
 - 歌单显式启用演奏计划缓存，按原曲谱对象、音源和演奏方式复用采样缓冲及编译后的事件；谱面内容变化自动失效。普通程序 play 默认仍按传入谱面处理。
 - 首播后静默准备另一位歌手，预热不会创建发声节点、修改当前播放状态或位置。并发请求共享同一份准备任务，失败后允许重试。
 - 已准备完成时不进入 loading 状态，也不显示“准备中”。首次进入页面或另一音源尚未加载完，仍需真实的下载、解码过程。
+
+## 2026-10-31 统一 C4 全声库 PSOLA、连音延音与分轨颤音升级
+
+- 歌单千本樱切换至 `engine: 'natural'`，并通过 `{fullBank: true}` 为全部 66 个音节统一读取 `assets/miku-full/*.wav`（44.1 kHz C4 VCV／补充音源），消除原版高音短 MP3（如 `G#5` 131 ms 的 `bo`）与 C4 干声混用造成的音色割裂和大幅降调闷音；手动 START 模式仍 100% 使用原版 32 个 MP3。
+- 曲谱导出保留 `sourceTrack`（第 1 轨 Main、第 2 轨 Sub、第 9 轨应答），将同轨紧邻的 125 处 VSQ `-` 元音延续标记为 `tie: true, tieVowel: true`，编译后合并为 532 个连续发声组，消除挑音（しゃくり）与句尾长音的元音重触发断字。
+- 展开 VSQ 中 36 处 `vibrato` 参数为正弦音高控制点曲线，并按 `voice:sourceTrack` 独立进行连音短空隙塑形，避免应答声部截断主唱延音。
+- 程序主总线增加并联短板式人声空间混响（约 0.82 s 衰减、16 ms 预延迟、高低切滤波，湿声 0.15），使干声采样与官方立体声伴奏自然融合；手动原版点击直连输出，不受混响影响。

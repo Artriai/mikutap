@@ -1,7 +1,12 @@
 /* Align consonants before the beat and overlap adjacent vowels, while preserving
- * actual phrase rests. Score lyric events and accompaniment timing stay intact. */
+ * actual phrase rests. Multi-track lanes stay isolated; lyric/accompaniment timing stays intact. */
 export function shapePhrases(groups,{natural=false}={}){
- const voices=new Map();for(const group of groups){if(!voices.has(group.voice))voices.set(group.voice,[]);voices.get(group.voice).push(group)}
+ const voices=new Map();
+ for(const group of groups){
+  const laneKey=group.voice+':'+(group.sourceTrack??'');
+  if(!voices.has(laneKey))voices.set(laneKey,[]);
+  voices.get(laneKey).push(group);
+ }
  for(const lane of voices.values())for(let i=0;i<lane.length;i++){
   const group=lane[i],next=lane[i+1],rate=2**((group.pitches[0].midi-group.baseMidi)/12),profile=group.profile??{onset:0,voicedAt:0};
   const lead=Math.min(group.time,.045,Math.max(0,(profile.voicedAt-profile.onset)/rate*.75));

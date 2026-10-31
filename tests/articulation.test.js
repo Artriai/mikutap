@@ -26,6 +26,16 @@ test('phrase shaping joins short gaps, preserves long rests and leaves score pit
  assert.ok(groups[0].startTime+groups[0].playDuration>groups[1].time,'vowels overlap into the next lyric');assert.ok(groups[1].startTime<groups[1].time,'consonant anticipates the vowel beat');assert.ok(groups[1].startTime+groups[1].playDuration<.4,'retain the real phrase rest');assert.ok(groups[2].startTime>=.755);
  groups.forEach((g,i)=>{assert.equal(g.time,before[i].time);assert.equal(g.duration,before[i].duration);assert.equal(JSON.stringify(g.pitches),before[i].pitches)});
 });
+test('phrase shaping isolates multi-track vocal lanes by sourceTrack',()=>{
+ const groups=[
+  {time:0,duration:.2,voice:'miku',sourceTrack:1,baseMidi:60,pitches:[{time:0,midi:64}],index:0},
+  {time:.1,duration:.08,voice:'miku',sourceTrack:9,baseMidi:60,pitches:[{time:0,midi:67}],index:1},
+  {time:.25,duration:.2,voice:'miku',sourceTrack:1,baseMidi:60,pitches:[{time:0,midi:65}],index:2}
+ ];
+ shapePhrases(groups,{natural:true});
+ assert.ok(groups[0].startTime+groups[0].playDuration>groups[2].time,'Track 1 sustains across interleaved Track 9 call-and-response');
+ assert.ok(groups[1].startTime+groups[1].playDuration<.24,'Track 9 call ends cleanly without bridging into Track 1');
+});
 test('both manual banks expose exactly the original 32 slots without limiting the program catalog',async()=>{
  const chain={each(){return this},attr(){return this},text(){return this},on(){return this}};
  const s={window:{MikutapBankCache:class{prime(){return Promise.resolve()}}},fetch:async()=>({ok:true,json:async()=>catalog}),$:arg=>typeof arg==='function'?undefined:chain,Map,Set,WeakMap,Promise,console};vm.runInNewContext(fs.readFileSync(new URL('voice.js',root),'utf8'),s);const api=s.window.MikutapVoice;await api.getCatalog();

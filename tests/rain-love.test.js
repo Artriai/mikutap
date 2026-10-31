@@ -19,3 +19,19 @@ test('Rain Love covers every aligned lyric sentence and shortens only the intro 
  assert.deepEqual(compileScore(variant,catalog).groups.map(g=>[g.time,g.duration,g.pitches]),compiled.groups.map(g=>[g.time,g.duration,g.pitches]));
  assert.ok(!fs.existsSync(new URL('assets/songs/rain-love-vocals.mp3',root)));
 });
+test('Rain Love pitch contours eliminate subharmonic octave drops and intra-note octave siren jumps',()=>{
+ const track=playlist.tracks.find(t=>t.id==='rain-love');
+ const score=read(track.score.split('?')[0]);
+ for(const note of score.notes){
+  const midis=note.pitches?.length?note.pitches.map(p=>p.midi):[note.midi];
+  const span=Math.max(...midis)-Math.min(...midis);
+  assert.ok(span<=8.5,`note ${note.syllable} at ${note.time}s has excessive intra-note pitch jump (${span} st)`);
+ }
+ const findAt=(syllable,t)=>score.notes.find(n=>n.syllable===syllable&&Math.abs(n.time-t)<.08);
+ for(const [syl,t] of [['duo',9.695],['ye',21.675],['rang',49.785],['yu',73.82],['ai',74.165]]){
+  const note=findAt(syl,t);assert.ok(note,`expected ${syl} near ${t}s`);
+  assert.ok(note.midi>=67,`${syl} at ${t}s stays in upper vocal register (${note.midi})`);
+ }
+ const lowVerse=score.notes.find(n=>n.phrase===5&&n.syllable==='bu');
+ assert.ok(lowVerse&&lowVerse.midi>=58&&lowVerse.midi<=62,'low B3/C#4 verse phrases remain in their genuine low register');
+});

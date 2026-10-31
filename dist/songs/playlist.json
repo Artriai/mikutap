@@ -5,12 +5,12 @@
       "title": "千本樱",
       "artist": "初音未来 · 完整歌词实时演唱",
       "voice": "miku",
-      "engine": "sampler",
+      "engine": "natural",
       "articulation": "legato",
       "duration": 182.48748,
-      "score": "songs/senbonzakura.json?v=6",
+      "score": "songs/senbonzakura.json?v=7",
       "variants": {
-        "tianyi": "songs/senbonzakura-tianyi.json?v=1"
+        "tianyi": "songs/senbonzakura-tianyi.json?v=2"
       }
     },
     {
@@ -21,9 +21,9 @@
       "engine": "natural",
       "articulation": "legato",
       "duration": 246.01237,
-      "score": "songs/rain-love.json?v=2",
+      "score": "songs/rain-love.json?v=3",
       "variants": {
-        "miku": "songs/rain-love-miku.json?v=2"
+        "miku": "songs/rain-love-miku.json?v=3"
       },
       "descriptions": {
         "tianyi": "洛天依 · 杨丞琳原曲",

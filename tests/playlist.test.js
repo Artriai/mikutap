@@ -1,13 +1,19 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {compileScore} from '../dist/score.js';
 const root=new URL('../dist/',import.meta.url);
 const catalog=JSON.parse(fs.readFileSync(new URL('catalog.json',root)));
 const playlist=JSON.parse(fs.readFileSync(new URL('songs/playlist.json',root)));
 test('main playlist sings every lyric event live without a song recording',()=>{
- const track=playlist.tracks.find(t=>t.id==='senbonzakura');assert.ok(track);assert.equal(track.engine,'sampler');assert.equal(track.audio,undefined);
+ const track=playlist.tracks.find(t=>t.id==='senbonzakura');assert.ok(track);assert.equal(track.engine,'natural');assert.equal(track.audio,undefined);
  const score=JSON.parse(fs.readFileSync(new URL(track.score.split('?')[0],root)));
+ assert.equal(score.engine,'natural');
  assert.equal(score.notes.length,657);assert.equal(new Set(score.notes.map(n=>n.syllable)).size,66);
+ const compiled=compileScore(score,catalog);
+ assert.equal(compiled.events.length,657);
+ assert.equal(compiled.groups.length,532,'125 VSQ "-" vowel extensions merge into continuous tied groups');
+ assert.ok(compiled.groups.filter(g=>g.pitches.length>2).length>=38,'VSQ vibrato and tied pitch scoops expand into multi-point pitch curves');
  assert.ok(fs.statSync(new URL(score.accompaniment.path,root)).size>2000000);assert.ok(score.accompaniment.path.endsWith('-instrumental.mp3'));
  assert.deepEqual(score.notes.filter(n=>n.phrase==='ICBM').map(n=>n.syllable),['a','i','shi','i','i','bi','e','mu']);
  assert.equal(score.notes.filter(n=>n.phrase==='one-two-san-shi').length,9);

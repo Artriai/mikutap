@@ -13,12 +13,15 @@ for track in [*data['tracks'][:2],data['tracks'][8]]:
  for item in track['notes']:
   label=re.match(r'"(.*?)"',item['lyric']).group(1).lower()
   time=item['tick']/ppq*quarter+offset;duration=int(item['Length'])/ppq*quarter
-  if label=='-':
+  is_ext=label=='-'
+  if is_ext:
    if previous is None:raise ValueError('Unresolved lyric extension')
    label=next((v for v in reversed(previous['syllable']) if v in 'aiueo'),'n')
   if label=='s':label='su'
   if label not in catalog['miku']['phonemes']:raise ValueError('Unmapped syllable: '+label)
   note={'time':round(time,5),'duration':round(duration,5),'syllable':label,'midi':int(item['Note#']),'velocity':.88,'visual':len(notes)%32,'sourceTrack':track['track']}
+  if is_ext and previous is not None and abs((previous['time']+previous['duration'])-time)<=.003:
+   note['tie']=True;note['tieVowel']=True
   if track['track']==9:note['phrase']='ICBM' if item['tick']<100000 else 'one-two-san-shi'
   if 'VibratoHandle' in item:
    handle=track['sections'].get(item['VibratoHandle'],{});note['vibrato']={'start':int(item.get('VibratoDelay',int(item['Length'])*.65))/ppq*quarter,'depth':min(.25,int(handle.get('StartDepth',32))*.003),'rate':5.3}
@@ -32,8 +35,8 @@ for note in notes:
 vocal_offset=unique[0]['time']
 for note in unique:note['time']=round(note['time']-vocal_offset,5)
 duration=round(max(n['time']+n['duration'] for n in unique)+.15,5)
-score={'title':'千本樱','voice':'miku','engine':'sampler','articulation':'legato','duration':duration,'originalVocalOffset':vocal_offset,'accompaniment':{'path':'assets/songs/senbonzakura-instrumental.mp3','gain':.42},'notes':unique,'source':{'song':'黒うさP / WhiteFlame','sequence':'Kate / Vocaloader sequence 3548','sequenceUrl':'https://vocaloader.app/sequences/3548','method':'Complete main, sub lead, and track 9 response vocals; live playback of the same Miku syllable buffers used by manual taps'}}
+score={'title':'千本樱','voice':'miku','engine':'natural','articulation':'legato','duration':duration,'originalVocalOffset':vocal_offset,'accompaniment':{'path':'assets/songs/senbonzakura-instrumental.mp3','gain':.42},'notes':unique,'source':{'song':'黒うさP / WhiteFlame','sequence':'Kate / Vocaloader sequence 3548','sequenceUrl':'https://vocaloader.app/sequences/3548','method':'Complete main, sub lead, and track 9 response vocals; formant-preserving live PSOLA playback of uniform C4 Miku VCV syllable buffers with tied vowel extensions and vibrato'}}
 (root/'dist/songs/senbonzakura.json').write_text(json.dumps(score,ensure_ascii=False,separators=(',',':')))
-manifest={'tracks':[{'id':'senbonzakura','title':'千本樱','artist':'初音未来 · 完整歌词实时演唱','voice':'miku','engine':'sampler','articulation':'legato','duration':duration,'score':'songs/senbonzakura.json?v=6'}]}
+manifest={'tracks':[{'id':'senbonzakura','title':'千本樱','artist':'初音未来 · 完整歌词实时演唱','voice':'miku','engine':'natural','articulation':'legato','duration':duration,'score':'songs/senbonzakura.json?v=7'}]}
 (root/'dist/songs/playlist.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps({'notes':len(unique),'syllables':len(set(n['syllable'] for n in unique)),'firstVocal':unique[0]['time'],'lastVocal':max(n['time']+n['duration'] for n in unique),'range':[min(n['midi'] for n in unique),max(n['midi'] for n in unique)]}))
