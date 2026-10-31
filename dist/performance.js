@@ -1,5 +1,5 @@
 import {synthesize} from './synthesis.js';
-import {naturalSyllable} from './natural.js?v=2';
+import {naturalSyllable} from './natural.js?v=3';
 import {compileScore} from './score.js?v=4';
 import {PreparedCache} from './prepared-cache.js';
 const preparedCache=new PreparedCache();

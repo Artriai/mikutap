@@ -132,9 +132,9 @@ export function naturalSyllable(buffer,{duration,baseMidi=60,pitches=[{time:0,mi
   const midi=a.midi+(b?b.midi-a.midi:0)*mix;
   center+=sr/(440*2**((midi-69)/12));
  }
- let peak=0;
+ let peak=0;const fadeIn=Math.max(1/sr,Math.min(.012,head*.5));/* The raw-to-PSOLA crossfade must finish inside the head: past `head`, mapping() advances at the (up to 9x) vowel compression rate, so raw audio read there is a sped-up burst heard as a tick on each compressed syllable. */
  for(let i=0;i<size;i++){
-  const t=i/sr,blend=Math.min(1,Math.max(0,(t-head)/.012));
+  const t=i/sr,blend=Math.min(1,Math.max(0,(t-(head-fadeIn))/fadeIn));
   const hasWeight=weights[i]>1e-5;
   const rawSample=(blend<1||!hasWeight)?read(x,mapping(t)):0;
   const processed=hasWeight?out[i]/weights[i]:rawSample;
