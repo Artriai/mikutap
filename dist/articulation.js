@@ -1,13 +1,17 @@
 /* Align consonants before the beat and overlap adjacent vowels, while preserving
  * actual phrase rests. Multi-track lanes stay isolated; lyric/accompaniment timing stays intact. */
-export function shapePhrases(groups,{natural=false}={}){
+import {jpVcvKey,cnVcKey} from './phonology.js?v=2';
+export function shapePhrases(groups,{natural=false,transitions=new Map()}={}){
  const voices=new Map();
  for(const group of groups){
   const laneKey=group.voice+':'+(group.sourceTrack??'');
   if(!voices.has(laneKey))voices.set(laneKey,[]);
   voices.get(laneKey).push(group);
  }
- for(const lane of voices.values())for(let i=0;i<lane.length;i++){
+ for(const group of groups)for(const field of ['vcvKey','vcKey','trimCoda','skipAttack','transitionBuffer','transitionMeta','transitionKind','transitionOffset'])delete group[field];
+ for(const lane of voices.values()){
+ lane.sort((a,b)=>a.time-b.time||a.index-b.index);
+ for(let i=0;i<lane.length;i++){
   const group=lane[i],next=lane[i+1],rate=2**((group.pitches[0].midi-group.baseMidi)/12),profile=group.profile??{onset:0,voicedAt:0};
   const lead=Math.min(group.time,.045,Math.max(0,(profile.voicedAt-profile.onset)/rate*.75));
   const gap=next?next.time-group.time-group.duration:Infinity;
@@ -18,6 +22,29 @@ export function shapePhrases(groups,{natural=false}={}){
   group.startTime=group.time-lead;group.playDuration=group.duration+lead+release;
   group.playPitches=group.pitches.map((point,j)=>({...point,time:j?point.time+lead:0}));
   group.release=join?overlap:Math.min(.025,release);
+ }
+ if(natural)for(let i=1;i<lane.length;i++){
+  const prev=lane[i-1],group=lane[i],gap=group.time-prev.time-prev.duration;
+  if(gap<-.003||gap>.16||(prev.phrase!==undefined&&prev.phrase!==group.phrase))continue;
+  const kind=group.voice==='miku'?'vcv':group.voice==='tianyi'?'vc':null;
+  const key=kind==='vcv'?jpVcvKey(prev.syllable,group.syllable):kind==='vc'?cnVcKey(prev.syllable,group.syllable):null;
+  if(!key)continue;group[kind+'Key']=key;
+  const entry=transitions.get(group.voice+':'+key);if(!entry)continue;
+  const available=Math.max(0,group.time-prev.time-Math.min(.04,prev.duration*.35));
+  const lead=Math.min(group.time,entry.meta.preutterance,available);
+  // A short/early note must still leave enough time to reach the new vowel.
+  if(kind==='vc'&&entry.meta.duration-entry.meta.preutterance>group.duration*.75)continue;
+  group.transitionBuffer=entry.buffer;group.transitionMeta=entry.meta;group.transitionKind=kind;
+  group.transitionOffset=entry.meta.preutterance-lead;
+  // Preserve the legacy release while replacing only the anticipatory head.
+  const release=group.playDuration-group.duration-(group.time-group.startTime);
+  group.startTime=group.time-lead;
+  group.playDuration=group.duration+lead+release;
+  group.playPitches=group.pitches.map((point,j)=>({...point,time:j?point.time+lead:0}));
+  prev.trimCoda=true;if(kind==='vc')group.skipAttack=true;
+  // Hand the previous vowel to the recorded transition once, before its consonant.
+  prev.playDuration=Math.max(.001,group.startTime+.028-prev.startTime);prev.release=.028;
+ }
  }
  return groups.sort((a,b)=>(a.startTime??a.time)-(b.startTime??b.time)||a.index-b.index);
 }
