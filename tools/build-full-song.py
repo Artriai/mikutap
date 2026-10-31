@@ -37,6 +37,6 @@ for note in unique:note['time']=round(note['time']-vocal_offset,5)
 duration=round(max(n['time']+n['duration'] for n in unique)+.15,5)
 score={'title':'千本樱','voice':'miku','engine':'natural','articulation':'legato','duration':duration,'originalVocalOffset':vocal_offset,'accompaniment':{'path':'assets/songs/senbonzakura-instrumental.mp3','gain':.42},'notes':unique,'source':{'song':'黒うさP / WhiteFlame','sequence':'Kate / Vocaloader sequence 3548','sequenceUrl':'https://vocaloader.app/sequences/3548','method':'Complete main, sub lead, and track 9 response vocals; formant-preserving live PSOLA playback of uniform C4 Miku VCV syllable buffers with tied vowel extensions and vibrato'}}
 (root/'dist/songs/senbonzakura.json').write_text(json.dumps(score,ensure_ascii=False,separators=(',',':')))
-manifest={'tracks':[{'id':'senbonzakura','title':'千本樱','artist':'初音未来 · 完整歌词实时演唱','voice':'miku','engine':'natural','articulation':'legato','duration':duration,'score':'songs/senbonzakura.json?v=7'}]}
+manifest={'tracks':[{'id':'senbonzakura','title':'千本樱','artist':'初音未来','voice':'miku','engine':'natural','articulation':'legato','duration':duration,'score':'songs/senbonzakura.json?v=7'}]}
 (root/'dist/songs/playlist.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps({'notes':len(unique),'syllables':len(set(n['syllable'] for n in unique)),'firstVocal':unique[0]['time'],'lastVocal':max(n['time']+n['duration'] for n in unique),'range':[min(n['midi'] for n in unique),max(n['midi'] for n in unique)]}))
