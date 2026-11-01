@@ -93,7 +93,7 @@ test('opposite-phase vowels have no cancellation hole in the 28 ms internal hand
 });
 
 test('VCV uses the recorded attack and pitches the following vowel at exact output duration',()=>{
- const vcv=tone(.4);for(let i=sr*.035;i<sr*.08;i++)vcv[i]=i%2?.2:-.2;
+ const vcv=tone(.4);for(let i=Math.round(sr*.035);i<Math.round(sr*.08);i++)vcv[i]=i%2?.2:-.2;
  const out=naturalSyllable(buffer(tone()),{duration:.7,pitches:[{time:0,midi:67}],transitionBuffer:buffer(vcv),transitionMeta:{...meta,duration:.4,preutterance:.1},transitionKind:'vcv',trimCoda:true});
  assert.equal(out.length,sr*.7);assert.ok(out.every(Number.isFinite));
  let error=0;for(let i=sr*.04;i<sr*.06;i++)error+=Math.abs(out[i]-vcv[i]);assert.ok(error/(sr*.02)<.01);

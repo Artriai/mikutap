@@ -2,7 +2,7 @@
  * open vowel nucleus steadily while reserving nasal/diphthong codas for note release.
  * Cycle-correlated pitch marks prevent phase drift; pitch and time stay independent. */
 import {estimatePeriod} from './synthesis.js';
-const analyses=new WeakMap();
+const analyses=new WeakMap(),transitionAnalyses=new WeakMap();
 function read(x,t){
  const n=x.length,i=Math.floor(t),f=t-i;
  if(f===0)return x[i]??0;
@@ -74,22 +74,112 @@ function analyze(buffer,baseMidi,profile){
  const result={x,sr,period,onset,voiced:Math.max(onset,voiced),end,marks,markRms,nucStart,nucEnd,targetRms};
  analyses.set(buffer,result);return result;
 }
-function renderSyllable(buffer,{duration,baseMidi=60,pitches=[{time:0,midi:60}],profile={},trimCoda=false,skipAttack=false,attackSeconds=null,openEdges=false,fixedTime=false}){
+function analyzeTransition(buffer,baseMidi=60){
+ if(transitionAnalyses.has(buffer))return transitionAnalyses.get(buffer);
+ const x=buffer.getChannelData(0),sr=buffer.sampleRate;
+ const period=sr/(440*2**((baseMidi-69)/12));
+ const hop=Math.max(1,Math.round(sr*.003)),half=Math.max(8,Math.round(period*.6));
+ const loLag=Math.max(8,Math.round(period*.82)),hiLag=Math.round(period*1.2);
+ const voicedFrames=new Uint8Array(Math.ceil(x.length/hop));
+ for(let f=0;f<voicedFrames.length;f++){
+  const c=f*hop,a=Math.max(1,c-half),b=Math.min(x.length,c+half);
+  let zc=0,power=0;
+  for(let i=a;i<b;i++){if((x[i]>=0)!==(x[i-1]>=0))zc++;power+=x[i]*x[i]}
+  const count=Math.max(1,b-a),zcr=zc/count,rms=Math.sqrt(power/count);
+  if(rms<1e-4||zcr>=.22){voicedFrames[f]=0;continue}
+  let bestCorr=-1;
+  for(let lag=loLag;lag<=hiLag;lag+=3){
+   let dot=0,aa=0,bb=0;
+   for(let i=Math.max(0,c-half);i<Math.min(x.length-lag,c+half);i+=2){const u=x[i],v=x[i+lag];dot+=u*v;aa+=u*u;bb+=v*v}
+   const corr=dot/Math.sqrt(aa*bb+1e-18);
+   if(corr>bestCorr)bestCorr=corr;
+  }
+  voicedFrames[f]=bestCorr>.38?1:0;
+ }
+ // Place pitch marks across voiced spans, re-anchoring cleanly after unvoiced consonants.
+ const marks=[],pRound=Math.round(period),halfW=Math.max(4,Math.round(period*.42));
+ let cursor=Math.round(period*.5);
+ while(cursor<x.length-pRound){
+  const f=Math.min(voicedFrames.length-1,Math.floor(cursor/hop));
+  if(!voicedFrames[f]){cursor+=hop;continue}
+  let peakIdx=cursor,peakVal=-Infinity;
+  for(let i=Math.max(0,cursor-Math.round(period*.45));i<=Math.min(x.length-1,cursor+Math.round(period*.55));i++)if(x[i]>peakVal){peakVal=x[i];peakIdx=i}
+  marks.push(peakIdx);
+  let prev=peakIdx;
+  while(prev+pRound<x.length-Math.round(period*.5)){
+   const nf=Math.min(voicedFrames.length-1,Math.floor((prev+pRound)/hop));
+   if(!voicedFrames[nf])break;
+   let bestLag=pRound,bestCorr=-Infinity;
+   for(let lag=loLag;lag<=hiLag;lag+=2){
+    if(prev+lag+halfW>=x.length)break;
+    let dot=0,aa=0,bb=0;
+    for(let k=-halfW;k<=halfW;k+=2){const u=x[prev+k]??0,v=x[prev+lag+k]??0;dot+=u*v;aa+=u*u;bb+=v*v}
+    const corr=dot/Math.sqrt(aa*bb+1e-18);
+    if(corr>bestCorr){bestCorr=corr;bestLag=lag}
+   }
+   let next=prev+bestLag,snap=Math.max(2,Math.round(period*.12)),pIdx=next,pVal=-Infinity;
+   for(let i=Math.max(prev+loLag,next-snap);i<=Math.min(x.length-1,next+snap);i++)if(x[i]>pVal){pVal=x[i];pIdx=i}
+   if(pIdx<=prev)break;
+   marks.push(pIdx);prev=pIdx;
+  }
+  cursor=prev+pRound;
+ }
+ const info={x,sr,period,hop,voicedFrames,marks};
+ transitionAnalyses.set(buffer,info);return info;
+}
+function renderTransition(buffer,{offset=0,duration,baseMidi=60,pitches=[{time:0,midi:60}]}){
+ const {x,sr,period,hop,voicedFrames,marks}=analyzeTransition(buffer,baseMidi);
+ const size=Math.max(1,Math.round(duration*sr)),psola=new Float32Array(size),weights=new Float32Array(size),out=new Float32Array(size);
+ let markIndex=0,pitchIndex=0;
+ for(let center=0;center<size;){
+  const t=center/sr,srcPos=(t+offset)*sr;
+  const f=Math.max(0,Math.min(voicedFrames.length-1,Math.floor(srcPos/hop)));
+  while(pitchIndex+1<pitches.length&&pitches[pitchIndex+1].time<=t)pitchIndex++;
+  const a=pitches[pitchIndex],b=pitches[pitchIndex+1],mix=b?Math.min(1,Math.max(0,(t-a.time)/(b.time-a.time))):0;
+  const midi=a.midi+(b?b.midi-a.midi:0)*mix,step=sr/(440*2**((midi-69)/12));
+  if(voicedFrames[f]&&marks.length){
+   while(markIndex+1<marks.length&&marks[markIndex+1]<=srcPos)markIndex++;
+   while(markIndex>0&&marks[markIndex]>srcPos)markIndex--;
+   if(markIndex+1<marks.length&&Math.abs(marks[markIndex+1]-srcPos)<Math.abs(marks[markIndex]-srcPos))markIndex++;
+   const source=marks[markIndex];
+   if(Math.abs(source-srcPos)<period*1.6){
+    const spanW=Math.ceil(period);
+    for(let j=-spanW;j<=spanW;j++){
+     const dest=Math.round(center+j);if(dest<0||dest>=size||Math.abs(j)>period)continue;
+     const w=.5+.5*Math.cos(Math.PI*j/period);
+     psola[dest]+=read(x,source+j)*w;weights[dest]+=w;
+    }
+   }
+  }
+  center+=step;
+ }
+ // Crisp 2.5 ms linear gate between pitch-shifted voiced spans and native-speed unvoiced consonants.
+ let gate=voicedFrames[Math.min(voicedFrames.length-1,Math.floor(offset*sr/hop))]?1:0;
+ const stepGate=1/Math.max(1,Math.round(sr*.0025));
+ for(let i=0;i<size;i++){
+  const srcPos=i+offset*sr;
+  const target=voicedFrames[Math.max(0,Math.min(voicedFrames.length-1,Math.floor(srcPos/hop)))]&&weights[i]>1e-4?1:0;
+  gate=target>gate?Math.min(1,gate+stepGate):Math.max(0,gate-stepGate);
+  const raw=read(x,srcPos),pitched=weights[i]>1e-4?psola[i]/weights[i]:raw;
+  out[i]=gate>.999?pitched:gate<.001?raw:raw*(1-gate)+pitched*gate;
+ }
+ return {samples:out,sampleRate:sr};
+}
+function renderSyllable(buffer,{duration,baseMidi=60,pitches=[{time:0,midi:60}],profile={},trimCoda=false,skipAttack=false,openEdges=false}){
  if(!Number.isFinite(duration)||duration<=0||duration>60)throw Error('无效的演唱时长');
  const {x,sr,period,onset,voiced,end,marks,markRms,nucStart,nucEnd,targetRms}=analyze(buffer,baseMidi,profile);
  const size=Math.round(duration*sr),out=new Float32Array(size),weights=new Float32Array(size);
  const bodyStart=marks[nucStart]??Math.max(voiced,marks[0]??voiced);
  const rawBodyEnd=marks[nucEnd]??Math.max(bodyStart+1,end-.035*sr);
  const bodyEnd=Math.max(bodyStart+Math.min(period*4,Math.max(1,end-bodyStart-1)),rawBodyEnd);
- const head=skipAttack?0:attackSeconds!==null?Math.min(attackSeconds,Math.max(0,duration-1/sr)):Math.min(Math.max(0,bodyStart-onset)/sr,duration*.28,.105);
+ const head=skipAttack?0:Math.min(Math.max(0,bodyStart-onset)/sr,duration*.28,.105);
  const codaSec=Math.max(.032,(end-bodyEnd)/sr);
  const tail=trimCoda?0:Math.min(codaSec,duration*.22,.09);
  const middle=Math.max(1/sr,duration-head-tail);
  const span=Math.max(1,bodyEnd-bodyStart),spanSec=span/sr;
  const longSustain=marks.length>=8&&middle>spanSec*1.65&&spanSec>.045;
  function mapping(t){
-  if(fixedTime)return t*sr;
-  if(t<head)return attackSeconds!==null?t*sr:onset+t/Math.max(head,1/sr)*(bodyStart-onset);
+  if(t<head)return onset+t/Math.max(head,1/sr)*(bodyStart-onset);
   if(!trimCoda&&t>duration-tail)return bodyEnd+(t-duration+tail)/Math.max(tail,1/sr)*Math.max(0,end-bodyEnd-1);
   const u=(t-head)/middle;
   if(!longSustain)return bodyStart+u*span;
@@ -113,7 +203,6 @@ function renderSyllable(buffer,{duration,baseMidi=60,pitches=[{time:0,midi:60}],
    if(markIndex+1<marks.length&&Math.abs(marks[markIndex+1]-wanted)<Math.abs(marks[markIndex]-wanted))markIndex++;
   }
   const source=marks[markIndex]??wanted;
-  // A source-period window retains the spectral envelope when F0 changes.
   const local=markIndex+1<marks.length?marks[markIndex+1]-source:markIndex>0?source-marks[markIndex-1]:period;
   const width=Math.max(period*.78,Math.min(period*1.25,local));
   let grainGain=1;
@@ -133,22 +222,9 @@ function renderSyllable(buffer,{duration,baseMidi=60,pitches=[{time:0,midi:60}],
   const midi=a.midi+(b?b.midi-a.midi:0)*mix;
   center+=sr/(440*2**((midi-69)/12));
  }
- let peak=0;const fadeIn=Math.max(1/sr,Math.min(.012,head*.5));/* The raw-to-PSOLA crossfade must finish inside the head: past `head`, mapping() advances at the (up to 9x) vowel compression rate, so raw audio read there is a sped-up burst heard as a tick on each compressed syllable. */
- let fixedBlend=0;
+ let peak=0;const fadeIn=Math.max(1/sr,Math.min(.012,head*.5));
  for(let i=0;i<size;i++){
-  const t=i/sr;
-  let blend=Math.min(1,Math.max(0,(t-(head-fadeIn))/fadeIn));
-  if(fixedTime){
-   // Correlation gates PSOLA to voiced portions. Fricatives and stop bursts stay raw.
-   const center=Math.round(t*sr),half=Math.round(sr*.012),lag=Math.round(period);
-   const hop=Math.max(1,Math.round(sr*.003));
-   if(i%hop===0){let dot=0,aa=0,bb=0,crossings=0,count=0;
-    for(let j=Math.max(1,center-half);j<Math.min(x.length,center+half);j++){crossings+=(x[j]>=0)!==(x[j-1]>=0)?1:0;count++}
-    for(let j=Math.max(0,center-half);j<Math.min(x.length-lag,center+half);j+=2){dot+=x[j]*x[j+lag];aa+=x[j]**2;bb+=x[j+lag]**2}
-    fixedBlend=crossings/Math.max(1,count)>.18?0:Math.max(0,Math.min(1,(dot/Math.sqrt(aa*bb+1e-20)-.55)/.25));
-   }
-   blend=fixedBlend;
-  }
+  const t=i/sr,blend=Math.min(1,Math.max(0,(t-(head-fadeIn))/fadeIn));
   const hasWeight=weights[i]>1e-5;
   const rawSample=(blend<1||!hasWeight)?read(x,mapping(t)):0;
   const processed=hasWeight?out[i]/weights[i]:rawSample;
@@ -159,37 +235,42 @@ function renderSyllable(buffer,{duration,baseMidi=60,pitches=[{time:0,midi:60}],
  if(!openEdges){out[0]=0;out[size-1]=0}return out;
 }
 
-/* Render one prepared buffer per note: the scheduler still uses a single source. */
+/* Fuse coarticulated VCV/VC transition prefix with the full steady-vowel syllable body. */
 export function naturalSyllable(buffer,options){
  const {transitionBuffer,transitionMeta,transitionKind,transitionOffset=0}=options;
  if(!transitionBuffer)return renderSyllable(buffer,options);
  const sr=buffer.sampleRate,meta=transitionMeta,offset=Math.max(0,transitionOffset);
- if(transitionKind==='vcv'){
-  const source=transitionBuffer,pre=meta.preutterance;
-  const rendered=renderSyllable(source,{...options,duration:options.duration+offset,pitches:shiftPitches(options.pitches,-offset),baseMidi:meta.midi,profile:{onset:0,voicedAt:pre},attackSeconds:pre});
-  // decodeAudioData normally shares a context rate; resample for offline callers too.
-  const out=Float32Array.from({length:Math.round(options.duration*sr)},(_,i)=>read(rendered,(i/sr+offset)*source.sampleRate)*(offset>0?Math.min(1,i/sr/.004):1));
-  out[0]=0;out[out.length-1]=0;return out;
- }
- const cross=Math.min(.028,options.duration*.2),prefix=Math.min(meta.duration-offset,options.duration-cross);
- const prefixStart=Math.max(0,prefix-cross),bodyDuration=options.duration-prefixStart;
+ const preLead=Math.max(0,meta.preutterance-offset);
+ // Stop Mandarin VC right after consonant release (avoiding the 85 ms carrier 'a' vowel),
+ // and hand Japanese VCV off right after vowel onset into the full 450 ms miku-full vowel nucleus.
+ const postTail=transitionKind==='vcv'?.028:.012;
+ const cross=Math.min(.022,options.duration*.24);
+ const maxPrefix=Math.min(preLead+postTail,Math.max(.008,meta.duration-offset));
+ const prefix=Math.min(maxPrefix,Math.max(cross,options.duration-cross));
+ const prefixStart=Math.max(0,prefix-cross),bodyDuration=Math.max(2/sr,options.duration-prefixStart);
  const bodyPitches=shiftPitches(options.pitches,prefixStart);
  const body=renderSyllable(buffer,{...options,duration:bodyDuration,pitches:bodyPitches,skipAttack:true,openEdges:true});
- const transition=renderSyllable(transitionBuffer,{duration:meta.duration,baseMidi:meta.midi,pitches:shiftPitches(options.pitches,-offset),fixedTime:true,openEdges:true});
+ const trans=renderTransition(transitionBuffer,{offset,duration:prefix,baseMidi:meta.midi,pitches:options.pitches});
  const out=new Float32Array(Math.round(options.duration*sr));
- // Align the first vowel cycles before equal-power fading; avoid opposite-phase holes.
- let best=0,bestCorr=-Infinity;const period=sr/(440*2**(((bodyPitches[0]?.midi??60)-69)/12)),width=Math.round(cross*sr);
- for(let lag=0;lag<Math.ceil(period);lag++){
-  let dot=0,aa=0,bb=0;for(let i=0;i<width;i+=2){const a=read(transition,(prefixStart+offset+i/sr)*transitionBuffer.sampleRate),b=body[i+lag]??0;dot+=a*b;aa+=a*a;bb+=b*b}
+ let best=0,bestCorr=-Infinity;
+ const period=sr/(440*2**(((bodyPitches[0]?.midi??60)-69)/12)),width=Math.max(4,Math.round(cross*sr));
+ for(let lag=0;lag<Math.min(body.length-width,Math.ceil(period));lag++){
+  let dot=0,aa=0,bb=0;
+  for(let i=0;i<width;i+=2){
+   const a=read(trans.samples,(prefixStart+i/sr)*trans.sampleRate),b=body[i+lag]??0;
+   dot+=a*b;aa+=a*a;bb+=b*b;
+  }
   const corr=dot/Math.sqrt(aa*bb+1e-20);if(corr>bestCorr){bestCorr=corr;best=lag}
  }
  for(let i=0;i<out.length;i++){
-  const t=i/sr,u=Math.min(1,Math.max(0,(t-prefixStart)/cross));
-  const a=t<prefix?read(transition,(t+offset)*transitionBuffer.sampleRate):0,b=t>=prefixStart?read(body,(t-prefixStart)*sr+best):0;
-  const fade=Math.max(0,Math.min(1,t/.004,(options.duration-t-1/sr)/.028));
-  out[i]=(a*Math.cos(u*Math.PI/2)+b*Math.sin(u*Math.PI/2))*fade;
+  const t=i/sr,u=cross>1e-5?Math.min(1,Math.max(0,(t-prefixStart)/cross)):1;
+  const a=t<prefix?(trans.sampleRate===sr?(trans.samples[i]??0):read(trans.samples,t*trans.sampleRate)):0;
+  const b=t>=prefixStart?read(body,(t-prefixStart)*sr+best):0;
+  const fade=Math.max(0,Math.min(1,t/.004,(options.duration-t-1/sr)/.026));
+  out[i]=(t<prefixStart?a:t>=prefix?b:(a*Math.cos(u*Math.PI/2)+b*Math.sin(u*Math.PI/2)))*fade;
  }
- let peak=0;for(const value of out)peak=Math.max(peak,Math.abs(value));if(peak>.96)for(let i=0;i<out.length;i++)out[i]*=.96/peak;
+ let peak=0;for(const value of out)peak=Math.max(peak,Math.abs(value));
+ if(peak>.96)for(let i=0;i<out.length;i++)out[i]*=.96/peak;
  out[0]=0;out[out.length-1]=0;return out;
 }
 function shiftPitches(pitches=[{time:0,midi:60}],offset){
